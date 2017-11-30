@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import {AddWorkoutPage} from "../add-workout/add-workout";
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,10 @@ export class HomePage {
     this.authProvider.logoutUser().then( () => {
       this.navCtrl.setRoot('LoginPage');
     });
+  }
+
+  addWorkout() {
+    this.navCtrl.push(AddWorkoutPage);
   }
 
 }
