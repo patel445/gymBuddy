@@ -8,6 +8,8 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class HomePage {
 
+  public titles: Array<string> = ['Test', 'TEST'];
+
   constructor(public navCtrl: NavController, public authProvider: AuthProvider) {}
 
   logMeOut() {
