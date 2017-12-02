@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddWorkoutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    numCards = 1;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddWorkoutPage');
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad AddWorkoutPage');
+    }
+
+    moreCards() {
+
+    }
+
+    lessCards() {
+
+    }
 
 }
