@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'firebase';
 
 /**
  * Generated class for the AddWorkoutPage page.
@@ -15,8 +16,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddWorkoutPage {
 
-    numCards = 1;
-
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
 
@@ -24,12 +23,23 @@ export class AddWorkoutPage {
         console.log('ionViewDidLoad AddWorkoutPage');
     }
 
-    moreCards() {
-        this.numCards++;
-    }
+    addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
+        let newWorkoutKey = firebase.database().ref().child('workouts').push().key;
 
-    lessCards() {
-        this.numCards--;
+        let workout = {
+            title: title,
+            nameOne: nameOne,
+            setsOne: setsOne,
+            repsOne: repsOne,
+            nameTwo: nameOne,
+            setsTwo: setsOne,
+            repsTwo: repsOne,
+            nameThree: nameOne,
+            setsThree: setsOne,
+            repsThree: repsOne,
+        };
+
+        return firebase.database().ref('/workouts/' + newWorkoutKey).set(workout);
     }
 
 }

@@ -15,42 +15,78 @@
 
 <ion-content padding>
 
-  <form (ngSubmit)="logForm()">
-    <ion-item>
-      <ion-label>Workout Title</ion-label>
-      <ion-input type="text"  name="title"></ion-input>
-    </ion-item>
+  <form (ngSubmit)="addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree)">
+      <ion-item>
+          <ion-label>Workout Title</ion-label>
+          <ion-input type="text"  name="title"></ion-input>
+      </ion-item>
 
 
-    <ion-cards>
+    <ion-card>
 
       <ion-card-header>
         <ion-item>
           <ion-label>Exercise Name</ion-label>
-          <ion-input  type="text" name="name"></ion-input>
+          <ion-input  type="text" [(ngModel)]="nameOne"></ion-input>
         </ion-item>
       </ion-card-header>
 
       <ion-card-content>
         <ion-item>
           <ion-label>Sets</ion-label>
-          <ion-input  type="text" name="sets"></ion-input>
+          <ion-input  type="text" [(ngModel)]="setsOne"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Reps</ion-label>
-          <ion-input  type="text" name="reps"></ion-input>
+          <ion-input  type="text" [(ngModel)]="repsOne"></ion-input>
         </ion-item>
       </ion-card-content>
 
-    </ion-cards>
+    </ion-card>
 
-      <ion-item>
-          <ion-row>
-              <button ion-button>More</button>
-              <button ion-button outline>Less</button>
-          </ion-row>
+      <ion-card>
 
-      </ion-item>
+          <ion-card-header>
+              <ion-item>
+                  <ion-label>Exercise Name</ion-label>
+                  <ion-input  type="text" [(ngModel)]="nameTwo"></ion-input>
+              </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+              <ion-item>
+                  <ion-label>Sets</ion-label>
+                  <ion-input  type="text" [(ngModel)]="setsTwo"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Reps</ion-label>
+                  <ion-input  type="text" [(ngModel)]="repsTwo"></ion-input>
+              </ion-item>
+          </ion-card-content>
+
+      </ion-card>
+
+      <ion-card>
+
+          <ion-card-header>
+              <ion-item>
+                  <ion-label>Exercise Name</ion-label>
+                  <ion-input  type="text" [(ngModel)]="nameThree"></ion-input>
+              </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+              <ion-item>
+                  <ion-label>Sets</ion-label>
+                  <ion-input  type="text" [(ngModel)]="setsThree"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Reps</ion-label>
+                  <ion-input  type="text" [(ngModel)]="repsThree"></ion-input>
+              </ion-item>
+          </ion-card-content>
+
+      </ion-card>
 
     <button ion-button type="submit" block>Add Workout</button>
   </form>
