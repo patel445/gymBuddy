@@ -15,4 +15,35 @@
 
 <ion-content padding>
 
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Workout Title</ion-label>
+      <ion-input type="text"  name="title"></ion-input>
+    </ion-item>
+
+
+    <ion-cards (swipe)="removeCard()">
+
+      <ion-card-header>
+        <ion-item>
+          <ion-label>Exercise Name</ion-label>
+          <ion-input  type="text" name="name"></ion-input>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Sets</ion-label>
+          <ion-input  type="text" name="sets"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Reps</ion-label>
+          <ion-input  type="text" name="reps"></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+    </ion-cards>
+    <button ion-button type="submit" block>Add Workout</button>
+  </form>
+
 </ion-content>

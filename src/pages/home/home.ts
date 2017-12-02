@@ -20,7 +20,7 @@ export class HomePage {
   }
 
   addWorkout() {
-    this.navCtrl.push(AddWorkoutPage);
+    this.navCtrl.push('AddWorkoutPage');
   }
 
 }
