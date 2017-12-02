@@ -11,9 +11,11 @@ import firebase from 'firebase';
 export class HomePage {
 
 
-  public titles: Array<string> = ['Test', 'TEST'];
+  public titles: Array<string>;
 
-  constructor(public navCtrl: NavController, public authProvider: AuthProvider) {}
+  constructor(public navCtrl: NavController, public authProvider: AuthProvider) {
+
+  }
 
   logMeOut() {
     this.authProvider.logoutUser().then( () => {

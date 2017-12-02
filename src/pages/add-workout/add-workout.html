@@ -18,7 +18,7 @@
   <form (ngSubmit)="addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree)">
       <ion-item>
           <ion-label>Workout Title</ion-label>
-          <ion-input type="text"  name="title"></ion-input>
+          <ion-input type="text"  [(ngModel)]="title" name="title"></ion-input>
       </ion-item>
 
 
@@ -27,18 +27,18 @@
       <ion-card-header>
         <ion-item>
           <ion-label>Exercise Name</ion-label>
-          <ion-input  type="text" [(ngModel)]="nameOne"></ion-input>
+          <ion-input  type="text" [(ngModel)]="nameOne" name="nameOne"></ion-input>
         </ion-item>
       </ion-card-header>
 
       <ion-card-content>
         <ion-item>
           <ion-label>Sets</ion-label>
-          <ion-input  type="text" [(ngModel)]="setsOne"></ion-input>
+          <ion-input  type="text" [(ngModel)]="setsOne" name="setsOne"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Reps</ion-label>
-          <ion-input  type="text" [(ngModel)]="repsOne"></ion-input>
+          <ion-input  type="text" [(ngModel)]="repsOne" name="repsOne"></ion-input>
         </ion-item>
       </ion-card-content>
 
@@ -49,18 +49,18 @@
           <ion-card-header>
               <ion-item>
                   <ion-label>Exercise Name</ion-label>
-                  <ion-input  type="text" [(ngModel)]="nameTwo"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="nameTwo" name="nameTwo"></ion-input>
               </ion-item>
           </ion-card-header>
 
           <ion-card-content>
               <ion-item>
                   <ion-label>Sets</ion-label>
-                  <ion-input  type="text" [(ngModel)]="setsTwo"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="setsTwo" name="setsTwo"></ion-input>
               </ion-item>
               <ion-item>
                   <ion-label>Reps</ion-label>
-                  <ion-input  type="text" [(ngModel)]="repsTwo"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="repsTwo" name="repsTwo"></ion-input>
               </ion-item>
           </ion-card-content>
 
@@ -71,18 +71,18 @@
           <ion-card-header>
               <ion-item>
                   <ion-label>Exercise Name</ion-label>
-                  <ion-input  type="text" [(ngModel)]="nameThree"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="nameThree" name="nameThree"></ion-input>
               </ion-item>
           </ion-card-header>
 
           <ion-card-content>
               <ion-item>
                   <ion-label>Sets</ion-label>
-                  <ion-input  type="text" [(ngModel)]="setsThree"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="setsThree" name="setsThree"></ion-input>
               </ion-item>
               <ion-item>
                   <ion-label>Reps</ion-label>
-                  <ion-input  type="text" [(ngModel)]="repsThree"></ion-input>
+                  <ion-input  type="text" [(ngModel)]="repsThree" name="repsThree"></ion-input>
               </ion-item>
           </ion-card-content>
 

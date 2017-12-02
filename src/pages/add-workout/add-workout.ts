@@ -37,6 +37,7 @@ export class AddWorkoutPage {
             nameThree: nameOne,
             setsThree: setsOne,
             repsThree: repsOne,
+            uid: firebase.auth().currentUser.uid
         };
 
         return firebase.database().ref('/workouts/' + newWorkoutKey).set(workout);
