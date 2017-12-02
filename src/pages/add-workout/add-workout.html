@@ -22,7 +22,7 @@
     </ion-item>
 
 
-    <ion-cards (swipe)="removeCard()">
+    <ion-cards>
 
       <ion-card-header>
         <ion-item>
@@ -43,6 +43,15 @@
       </ion-card-content>
 
     </ion-cards>
+
+      <ion-item>
+          <ion-row>
+              <button ion-button>More</button>
+              <button ion-button outline>Less</button>
+          </ion-row>
+
+      </ion-item>
+
     <button ion-button type="submit" block>Add Workout</button>
   </form>
 

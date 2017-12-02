@@ -25,11 +25,11 @@ export class AddWorkoutPage {
     }
 
     moreCards() {
-
+        this.numCards++;
     }
 
     lessCards() {
-
+        this.numCards--;
     }
 
 }
