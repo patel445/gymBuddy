@@ -10,11 +10,22 @@ import firebase from 'firebase';
 })
 export class HomePage {
 
-
-  public titles: Array<string>;
+    public workouts: Array<any> = [];
+    public workoutsRef: firebase.database.Reference = firebase.database().ref().child('workouts');
 
   constructor(public navCtrl: NavController, public authProvider: AuthProvider) {
+  }
 
+  ionViewDidLoad() {
+      this.workoutsRef.on('value', snapshot => {
+          this.workouts = [];
+
+          snapshot.forEach( workoutSnapshot => {
+
+              this.workouts.push(workoutSnapshot.val());
+              return false;
+          });
+      });
   }
 
   logMeOut() {
