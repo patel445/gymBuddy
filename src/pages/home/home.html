@@ -19,11 +19,14 @@
       {{ workout.title }}
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <ion-item>{{ workout.nameOne }}</ion-item>
-        <ion-item>{{ workout.nameTwo }}</ion-item>
-        <ion-item>{{ workout.nameThree }}</ion-item>
-      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>{{ workout.nameOne }}</ion-col>
+          <ion-col col-4>{{ workout.nameTwo }}</ion-col>
+          <ion-col col-4>{{ workout.nameThree }}</ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-card-content>
   </ion-card>
 
