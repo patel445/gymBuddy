@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts';
 import { AboutPage } from '../pages/about/about';
 import { AuthProvider } from '../providers/auth/auth';
 
