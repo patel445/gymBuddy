@@ -14,11 +14,18 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let workout of workouts">
+  <ion-card *ngFor="let workout of workouts">
+    <ion-card-header>
       {{ workout.title }}
-    </ion-item>
-  </ion-list>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>{{ workout.nameOne }}</ion-item>
+        <ion-item>{{ workout.nameTwo }}</ion-item>
+        <ion-item>{{ workout.nameThree }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
   <ion-fab bottom right>
     <button ion-fab (click)="addWorkout()">+</button>
