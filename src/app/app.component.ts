@@ -4,18 +4,26 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts';
+import { AboutPage } from '../pages/about/about';
 import firebase from 'firebase';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any;
   public zone:NgZone;
   @ViewChild(Nav) nav: Nav;
+  
+  rootPage:any;
+  pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.zone = new NgZone({});
+    this.pages = [
+      { title: 'Homepage', component: HomePage },
+      { title: 'MyWorkouts', component: MyWorkoutsPage },
+      { title: 'About', component: AboutPage }
+    ];
     const config = {
       apiKey: "AIzaSyCikpemXegYWxXFki5KI14nWQ3s5ZILzIM",
       authDomain: "gymbuddy-cca5a.firebaseapp.com",
@@ -35,23 +43,14 @@ export class MyApp {
         }
       });     
     });
-
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    
+    
   }
-
-  goToHome() {
-    this.nav.setRoot(HomePage)
-  }
-
-  goToMyWorkouts() {
-    this.nav.setRoot(MyWorkoutsPage)
-  }
-
-  goToHelp() {
-
+  openPage(page) {
+        this.nav.setRoot(page.component);
   }
 }
-
