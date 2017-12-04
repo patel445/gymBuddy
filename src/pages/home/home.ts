@@ -37,5 +37,8 @@ export class HomePage {
   addWorkout() {
     this.navCtrl.push('AddWorkoutPage');
   }
+  removeWorkout(workout){
+    this.navCtrl.remove(workout);
+  }
 
 }

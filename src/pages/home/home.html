@@ -24,12 +24,16 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>
-          <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>
-          <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col>
+          <ion-col col-3>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>
+          <ion-col col-3>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>
+          <ion-col col-3>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col>
+          <ion-col col-3>
+             <ion-buttons end>
+                <button ion-button color="danger" (click)="removeWorkout(workout)">Delete</button>
+             </ion-buttons>
+          </ion-col>
         </ion-row>
       </ion-grid>
-
     </ion-card-content>
   </ion-card>
     
