@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 613:
+/***/ 612:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45,7 +45,7 @@ var AddWorkoutPageModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddWorkoutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -69,12 +69,13 @@ var AddWorkoutPage = (function () {
     function AddWorkoutPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.workoutsRef = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref().child('workouts');
     }
     AddWorkoutPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AddWorkoutPage');
     };
     AddWorkoutPage.prototype.addWorkout = function (title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
-        var newWorkoutKey = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref().child('workouts').push().key;
+        var newWorkoutKey = this.workoutsRef.push().key;
         var workout = {
             title: title,
             nameOne: nameOne,
@@ -89,7 +90,7 @@ var AddWorkoutPage = (function () {
             uid: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid,
             addedAt: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database.ServerValue.TIMESTAMP
         };
-        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/workouts/' + newWorkoutKey).set(workout);
+        // Check if total exists for day
         this.navCtrl.pop();
     };
     AddWorkoutPage = __decorate([

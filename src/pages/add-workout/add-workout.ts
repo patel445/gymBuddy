@@ -16,34 +16,39 @@ import firebase from 'firebase';
 })
 export class AddWorkoutPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-    }
+  public workoutsRef = firebase.database().ref().child('workouts')
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad AddWorkoutPage');
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
-    addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
-        let newWorkoutKey = firebase.database().ref().child('workouts').push().key;
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AddWorkoutPage');
+  }
 
-        let workout = {
-            title: title,
-            nameOne: nameOne,
-            setsOne: setsOne,
-            repsOne: repsOne,
-            nameTwo: nameTwo,
-            setsTwo: setsTwo,
-            repsTwo: repsTwo,
-            nameThree: nameThree,
-            setsThree: setsThree,
-            repsThree: repsThree,
-            uid: firebase.auth().currentUser.uid,
-            addedAt: firebase.database.ServerValue.TIMESTAMP
-        };
+  addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
+    let newWorkoutKey = this.workoutsRef.push().key;
 
-        firebase.database().ref('/workouts/' + newWorkoutKey).set(workout);
+    let workout = {
+      title: title,
+      nameOne: nameOne,
+      setsOne: setsOne,
+      repsOne: repsOne,
+      nameTwo: nameTwo,
+      setsTwo: setsTwo,
+      repsTwo: repsTwo,
+      nameThree: nameThree,
+      setsThree: setsThree,
+      repsThree: repsThree,
+      uid: firebase.auth().currentUser.uid,
+      addedAt: firebase.database.ServerValue.TIMESTAMP
+    };
 
-        this.navCtrl.pop();
-    }
+    // Check if total exists for day
+
+
+
+
+    this.navCtrl.pop();
+  }
 
 }
