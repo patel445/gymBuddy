@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { WorkoutDetailPage } from '../workout-detail/workout-detail';
 import firebase from 'firebase';
 
 /**
@@ -37,6 +38,12 @@ export class MyWorkoutsPage {
 
   addWorkout() {
     this.navCtrl.push('AddWorkoutPage');
+  }
+
+  goToWorkoutDetailPage(workout) {
+    console.log(workout);
+    let workoutTemp = {'workout': workout};
+    this.navCtrl.push(WorkoutDetailPage, workoutTemp);
   }
 
 }

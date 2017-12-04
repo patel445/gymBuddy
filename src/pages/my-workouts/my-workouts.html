@@ -22,7 +22,7 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let workout of workouts">
+  <ion-card *ngFor="let workout of workouts" (click)="goToWorkoutDetailPage(workout)">
     <ion-card-header>
       {{ workout.title }}
     </ion-card-header>

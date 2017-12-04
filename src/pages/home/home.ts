@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import {AddWorkoutPage} from "../add-workout/add-workout";
+import { WorkoutDetailPage } from "../workout-detail/workout-detail"
 import firebase from 'firebase';
 
 @Component({
@@ -39,6 +40,12 @@ export class HomePage {
   }
   removeWorkout(workout){
     this.navCtrl.remove(workout);
+  }
+
+  goToWorkoutDetailPage(workout) {
+    console.log(workout);
+    let workoutTemp = {'workout': workout};
+    this.navCtrl.push(WorkoutDetailPage, workoutTemp);
   }
 
 }

@@ -7,6 +7,7 @@ import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
+import { WorkoutDetailPage } from '../pages/workout-detail/workout-detail'
 import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AuthProvider } from '../providers/auth/auth';
     MyApp,
     HomePage,
     MyWorkoutsPage,
-    AboutPage
+    AboutPage,
+    WorkoutDetailPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { AuthProvider } from '../providers/auth/auth';
     MyApp,
     HomePage,
     MyWorkoutsPage,
-    AboutPage
+    AboutPage,
+    WorkoutDetailPage
   ],
   providers: [
     StatusBar,
