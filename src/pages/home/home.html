@@ -8,6 +8,9 @@
     <ion-title>
       Homepage
     </ion-title>
+    <ion-buttons end>
+    <button ion-button color="danger" (click)="logMeOut()">Logout</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -29,11 +32,11 @@
 
     </ion-card-content>
   </ion-card>
+    
+  <ion-card style="text-align: center;">
+     <ion-fab bottom>
+       <button ion-fab (click)="addWorkout()">+</button>
+     </ion-fab>
+  </ion-card>
 
-  <ion-fab bottom right>
-    <button ion-fab (click)="addWorkout()">+</button>
-  </ion-fab>
-
-  <button ion-button color="positive" block (click)="logMeOut()">Logout
-  </button>
 </ion-content>
