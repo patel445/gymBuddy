@@ -10,10 +10,6 @@ import firebase from 'firebase';
 })
 export class HomePage {
 
-    private rootPage;
-    private helpPage;
-    private myWorkoutsPage;
-
     public workouts: Array<any> = [];
     public workoutsRef: firebase.database.Reference = firebase.database().ref().child('workouts');
 
