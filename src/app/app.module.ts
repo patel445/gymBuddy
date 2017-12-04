@@ -3,30 +3,32 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts'
+import { ChartPage } from '../pages/chart/chart'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { WorkoutDetailPage } from '../pages/workout-detail/workout-detail'
 import { AuthProvider } from '../providers/auth/auth';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MyWorkoutsPage,
+    ChartPage,
     AboutPage,
     WorkoutDetailPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    MyWorkoutsPage,
+    ChartPage,
     AboutPage,
     WorkoutDetailPage
   ],

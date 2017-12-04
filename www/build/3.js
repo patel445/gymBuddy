@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 437:
+/***/ 616:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddWorkoutPageModule", function() { return AddWorkoutPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyWorkoutsPageModule", function() { return MyWorkoutsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_workout__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__my_workouts__ = __webpack_require__(623);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddWorkoutPageModule = (function () {
-    function AddWorkoutPageModule() {
+var MyWorkoutsPageModule = (function () {
+    function MyWorkoutsPageModule() {
     }
-    AddWorkoutPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    MyWorkoutsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__add_workout__["a" /* AddWorkoutPage */],
+                __WEBPACK_IMPORTED_MODULE_2__my_workouts__["a" /* MyWorkoutsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_workout__["a" /* AddWorkoutPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__my_workouts__["a" /* MyWorkoutsPage */]),
             ],
         })
-    ], AddWorkoutPageModule);
-    return AddWorkoutPageModule;
+    ], MyWorkoutsPageModule);
+    return MyWorkoutsPageModule;
 }());
 
-//# sourceMappingURL=add-workout.module.js.map
+//# sourceMappingURL=my-workouts.module.js.map
 
 /***/ }),
 
-/***/ 444:
+/***/ 623:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddWorkoutPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyWorkoutsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__workout_detail_workout_detail__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,49 +60,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the AddWorkoutPage page.
+ * Generated class for the MyWorkoutsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AddWorkoutPage = (function () {
-    function AddWorkoutPage(navCtrl, navParams) {
+var MyWorkoutsPage = (function () {
+    function MyWorkoutsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.workouts = [];
+        this.workoutsRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref().child('workouts');
     }
-    AddWorkoutPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddWorkoutPage');
+    MyWorkoutsPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.workoutsRef.orderByChild('uid').equalTo(__WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser.uid).on('value', function (snapshot) {
+            _this.workouts = [];
+            snapshot.forEach(function (workoutSnapshot) {
+                _this.workouts.push(workoutSnapshot.val());
+                return false;
+            });
+        });
+        console.log('ionViewDidLoad MyWorkoutsPage');
     };
-    AddWorkoutPage.prototype.addWorkout = function (title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
-        var newWorkoutKey = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref().child('workouts').push().key;
-        var workout = {
-            title: title,
-            nameOne: nameOne,
-            setsOne: setsOne,
-            repsOne: repsOne,
-            nameTwo: nameTwo,
-            setsTwo: setsTwo,
-            repsTwo: repsTwo,
-            nameThree: nameThree,
-            setsThree: setsThree,
-            repsThree: repsThree,
-            uid: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid,
-            addedAt: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database.ServerValue.TIMESTAMP
-        };
-        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref('/workouts/' + newWorkoutKey).set(workout);
-        this.navCtrl.pop();
+    MyWorkoutsPage.prototype.addWorkout = function () {
+        this.navCtrl.push('AddWorkoutPage');
     };
-    AddWorkoutPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-workout',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/add-workout/add-workout.html"*/'<!--\n  Generated template for the AddWorkoutPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n    <ion-navbar>\n        <ion-buttons left>\n            <button ion-button menuToggle>\n                <ion-icon name="menu"></ion-icon>\n            </button>\n        </ion-buttons>\n        <ion-title>\n            Add Workout\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <form (ngSubmit)="addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree)">\n      <ion-item>\n          <ion-label>Workout Title</ion-label>\n          <ion-input type="text"  [(ngModel)]="title" name="title"></ion-input>\n      </ion-item>\n\n\n    <ion-card>\n\n      <ion-card-header>\n        <ion-item>\n          <ion-label>Exercise Name</ion-label>\n          <ion-input  type="text" [(ngModel)]="nameOne" name="nameOne"></ion-input>\n        </ion-item>\n      </ion-card-header>\n\n      <ion-card-content>\n        <ion-item>\n          <ion-label>Sets</ion-label>\n          <ion-input  type="text" [(ngModel)]="setsOne" name="setsOne"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label>Reps</ion-label>\n          <ion-input  type="text" [(ngModel)]="repsOne" name="repsOne"></ion-input>\n        </ion-item>\n      </ion-card-content>\n\n    </ion-card>\n\n      <ion-card>\n\n          <ion-card-header>\n              <ion-item>\n                  <ion-label>Exercise Name</ion-label>\n                  <ion-input  type="text" [(ngModel)]="nameTwo" name="nameTwo"></ion-input>\n              </ion-item>\n          </ion-card-header>\n\n          <ion-card-content>\n              <ion-item>\n                  <ion-label>Sets</ion-label>\n                  <ion-input  type="text" [(ngModel)]="setsTwo" name="setsTwo"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Reps</ion-label>\n                  <ion-input  type="text" [(ngModel)]="repsTwo" name="repsTwo"></ion-input>\n              </ion-item>\n          </ion-card-content>\n\n      </ion-card>\n\n      <ion-card>\n\n          <ion-card-header>\n              <ion-item>\n                  <ion-label>Exercise Name</ion-label>\n                  <ion-input  type="text" [(ngModel)]="nameThree" name="nameThree"></ion-input>\n              </ion-item>\n          </ion-card-header>\n\n          <ion-card-content>\n              <ion-item>\n                  <ion-label>Sets</ion-label>\n                  <ion-input  type="text" [(ngModel)]="setsThree" name="setsThree"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Reps</ion-label>\n                  <ion-input  type="text" [(ngModel)]="repsThree" name="repsThree"></ion-input>\n              </ion-item>\n          </ion-card-content>\n\n      </ion-card>\n\n    <button ion-button type="submit" block>Add Workout</button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/add-workout/add-workout.html"*/,
+    MyWorkoutsPage.prototype.goToWorkoutDetailPage = function (workout) {
+        console.log(workout);
+        var workoutTemp = { 'workout': workout };
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__workout_detail_workout_detail__["a" /* WorkoutDetailPage */], workoutTemp);
+    };
+    MyWorkoutsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-my-workouts',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/my-workouts/my-workouts.html"*/'<!--\n  Generated template for the MyWorkoutsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      My Workouts\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngFor="let workout of workouts" (click)="goToWorkoutDetailPage(workout)">\n    <ion-card-header>\n      {{ workout.title }}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>\n          <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>\n          <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col>\n        </ion-row>\n      </ion-grid>\n\n    </ion-card-content>\n  </ion-card>\n\n  <ion-fab bottom right>\n    <button ion-fab (click)="addWorkout()">+</button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/my-workouts/my-workouts.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], AddWorkoutPage);
-    return AddWorkoutPage;
+    ], MyWorkoutsPage);
+    return MyWorkoutsPage;
 }());
 
-//# sourceMappingURL=add-workout.js.map
+//# sourceMappingURL=my-workouts.js.map
 
 /***/ })
 
