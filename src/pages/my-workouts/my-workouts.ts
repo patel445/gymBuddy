@@ -23,7 +23,7 @@ export class MyWorkoutsPage {
   }
 
   ionViewDidLoad() {
-    this.workoutsRef.on('value', snapshot => {
+    this.workoutsRef.orderByChild('uid').equalTo(firebase.auth().currentUser.uid).on('value', snapshot => {
       this.workouts = [];
 
       snapshot.forEach( workoutSnapshot => {

@@ -41,7 +41,9 @@ export class AddWorkoutPage {
             addedAt: firebase.database.ServerValue.TIMESTAMP
         };
 
-        return firebase.database().ref('/workouts/' + newWorkoutKey).set(workout);
+        firebase.database().ref('/workouts/' + newWorkoutKey).set(workout);
+
+        this.navCtrl.pop();
     }
 
 }
