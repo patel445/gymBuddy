@@ -31,12 +31,12 @@ export class AddWorkoutPage {
             nameOne: nameOne,
             setsOne: setsOne,
             repsOne: repsOne,
-            nameTwo: nameOne,
-            setsTwo: setsOne,
-            repsTwo: repsOne,
-            nameThree: nameOne,
-            setsThree: setsOne,
-            repsThree: repsOne,
+            nameTwo: nameTwo,
+            setsTwo: setsTwo,
+            repsTwo: repsTwo,
+            nameThree: nameThree,
+            setsThree: setsThree,
+            repsThree: repsThree,
             uid: firebase.auth().currentUser.uid,
             addedAt: firebase.database.ServerValue.TIMESTAMP
         };
