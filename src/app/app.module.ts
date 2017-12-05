@@ -10,6 +10,7 @@ import { AboutPage } from '../pages/about/about';
 import { WorkoutDetailPage } from '../pages/workout-detail/workout-detail'
 import { AuthProvider } from '../providers/auth/auth';
 import { ChartsModule } from 'ng2-charts';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ChartsModule } from 'ng2-charts';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider, 
+    SocialSharing
   ]
 })
 export class AppModule {}
