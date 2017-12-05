@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 612:
+/***/ 614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69,13 +69,19 @@ var AddWorkoutPage = (function () {
     function AddWorkoutPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.workoutsRef = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref().child('workouts');
+        this.dbRef = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref();
     }
     AddWorkoutPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AddWorkoutPage');
     };
     AddWorkoutPage.prototype.addWorkout = function (title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
-        var newWorkoutKey = this.workoutsRef.push().key;
+        var _this = this;
+        var newWorkoutKey = this.dbRef.child('workouts').push().key;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        var curr = mm + '/' + dd + '/' + yyyy;
         var workout = {
             title: title,
             nameOne: nameOne,
@@ -88,9 +94,28 @@ var AddWorkoutPage = (function () {
             setsThree: setsThree,
             repsThree: repsThree,
             uid: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid,
-            addedAt: __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database.ServerValue.TIMESTAMP
+            addedAt: curr
         };
+        this.dbRef.child('workouts/' + newWorkoutKey).set(workout);
+        var uid = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid;
         // Check if total exists for day
+        this.dbRef.child('userProfile/' + uid + '/totals').orderByChild('date').equalTo(curr).once('value', function (snapshot) {
+            var total = snapshot.val();
+            var key = snapshot.key;
+            if (total) {
+                var amount = total.amount;
+                amount += (setsOne * repsOne + setsTwo * repsTwo + setsThree * repsThree);
+                _this.dbRef.child('userProfile/' + uid + '/totals/' + key + '/amount').set(amount);
+            }
+            else {
+                var newTotalKey = _this.dbRef.child('userProfile/' + uid + '/totals').push().key;
+                var newTotal = {
+                    date: curr,
+                    amount: (setsOne * repsOne + setsTwo * repsTwo + setsThree * repsThree)
+                };
+                _this.dbRef.child('userProfile/' + uid + '/totals/' + newTotalKey).set(newTotal);
+            }
+        });
         this.navCtrl.pop();
     };
     AddWorkoutPage = __decorate([

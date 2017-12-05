@@ -16,7 +16,7 @@ import firebase from 'firebase';
 })
 export class AddWorkoutPage {
 
-  public workoutsRef = firebase.database().ref().child('workouts')
+  public dbRef = firebase.database().ref();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,7 +26,15 @@ export class AddWorkoutPage {
   }
 
   addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
-    let newWorkoutKey = this.workoutsRef.push().key;
+    let newWorkoutKey = this.dbRef.child('workouts').push().key;
+
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth()+1; //January is 0!
+
+    let yyyy = today.getFullYear();
+
+    let curr = mm+'/'+dd+'/'+yyyy;
 
     let workout = {
       title: title,
@@ -40,11 +48,34 @@ export class AddWorkoutPage {
       setsThree: setsThree,
       repsThree: repsThree,
       uid: firebase.auth().currentUser.uid,
-      addedAt: firebase.database.ServerValue.TIMESTAMP
+      addedAt: curr
     };
 
-    // Check if total exists for day
+    this.dbRef.child('workouts/' + newWorkoutKey).set(workout);
 
+    let uid = firebase.auth().currentUser.uid;
+    // Check if total exists for day
+    this.dbRef.child('userProfile/' + uid + '/totals').orderByChild('date').equalTo(curr).once('value', snapshot => {
+      const total = snapshot.val();
+      const key = snapshot.key;
+
+      if(total) {
+        let amount = total.amount;
+
+        amount += (setsOne*repsOne + setsTwo*repsTwo + setsThree*repsThree);
+
+        this.dbRef.child('userProfile/' + uid + '/totals/' + key + '/amount').set(amount);
+      } else {
+        let newTotalKey = this.dbRef.child('userProfile/' + uid + '/totals').push().key;
+
+        let newTotal = {
+          date: curr,
+          amount: (setsOne*repsOne + setsTwo*repsTwo + setsThree*repsThree)
+        };
+
+        this.dbRef.child('userProfile/' + uid + '/totals/' + newTotalKey).set(newTotal);
+      }
+    });
 
 
 

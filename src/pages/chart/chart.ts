@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Chart } from 'chart.js';
 import firebase from 'firebase';
 
 /**
@@ -16,33 +17,115 @@ import firebase from 'firebase';
 })
 export class ChartPage {
 
-  public amounts: Array<any> = [];
-  public workouts: Array<any> = [];
-  public workoutsRef: firebase.database.Reference = firebase.database().ref().child('workouts');
+  @ViewChild('lineCanvas') lineCanvas;
+
+  public lineChart: any;
+
+  public uid: string = firebase.auth().currentUser.uid;
+  public chartData: Array<any> = [];
+  public days: Array<any> = [];
+  public chartType: string = 'line';
+
+
+  public totalsRef: firebase.database.Reference = firebase.database().ref('userProfile/' + this.uid + '/totals');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    let tempChart = new Chart(this.lineCanvas.nativeElement);
+
     console.log('ionViewDidLoad ChartPage');
-  }
 
-  getData() {
-    this.workoutsRef.orderByChild('uid')
-      .equalTo(firebase.auth().currentUser.uid)
-      .once('value', snapshot => {
-        this.workouts = [];
+    let dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-        snapshot.forEach( workoutSnapshot => {
+    let today = new Date();
 
-          this.workouts.push(workoutSnapshot.val());
-          return false;
+    let day = new Date();
+
+    let dd, mm, yyyy, curr;
+
+    for(let i = 0; i < 7; i++) {
+      let that = this;
+      day = new Date( today.getTime() - ((6-i) * 24 * 60 * 60 * 1000) );
+
+      dd = day.getDate();
+      mm = day.getMonth()+1;
+      yyyy = day.getFullYear();
+
+      curr = mm+'/'+dd+'/'+yyyy;
+
+      // console.log(curr);
+
+      // Add day name to data
+      this.days.push(dayNames[day.getDay()]);
+
+      //console.log(day.getDay());
+
+      // Add day amount to data
+      this.totalsRef.orderByChild('date').equalTo(curr).once('value', snapshot => {
+        //let temp = snapshot.val();
+
+        if(snapshot.val()) {
+          console.log('Here');
+
+          snapshot.forEach( totalSnapshot => {
+            this.chartData.unshift(totalSnapshot.val().amount);
+
+            return false;
+          })
+
+
+        } else {
+          this.chartData.unshift(0);
+        }
+        // console.log(this.chartData[0].data);
+
+      }).then(function() {
+        that.lineChart = new Chart(that.lineCanvas.nativeElement, {
+          type: 'line',
+          data: {
+            labels: that.days,
+            datasets: [{
+              label: 'Reps',
+              data: that.chartData,
+              fill: false
+            }]
+          }
         });
-      })
+
+      });
+
+      // this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+      //   type: 'line',
+      //   data: {
+      //     labels: this.days,
+      //     datasets: [{
+      //       label: 'Reps',
+      //       data: this.chartData,
+      //       fill: false
+      //     }]
+      //   }
+      // });
+
+
+
+    }
+
+    console.log(this.chartData);
+
+
+
+
   }
 
-  parseWorkouts() {
 
+  chartClicked() {
+    console.log('Chart Clicked');
+  }
+
+  chartHovered() {
+    console.log('Chart Hovered')
   }
 
 }
