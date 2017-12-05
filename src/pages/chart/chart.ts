@@ -87,26 +87,15 @@ export class ChartPage {
           data: {
             labels: that.days,
             datasets: [{
-              label: 'Reps',
+              label: 'Reps this Week',
               data: that.chartData,
-              fill: false
+              fill: true
             }]
           }
         });
 
       });
 
-      // this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      //   type: 'line',
-      //   data: {
-      //     labels: this.days,
-      //     datasets: [{
-      //       label: 'Reps',
-      //       data: this.chartData,
-      //       fill: false
-      //     }]
-      //   }
-      // });
 
 
 
