@@ -39,7 +39,7 @@ export class HomePage {
     this.navCtrl.push('AddWorkoutPage');
   }
   removeWorkout(workout){
-    this.navCtrl.remove(workout);
+    this.workouts.remove(workout);
   }
 
   goToWorkoutDetailPage(workout) {
