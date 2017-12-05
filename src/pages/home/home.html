@@ -17,30 +17,37 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let workout of workouts" (click)="goToWorkoutDetailPage(workout)">
-    <ion-card-header>
-      {{ workout.title }}
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col col-3>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>
-          <ion-col col-3>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>
-          <ion-col col-3>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col>
-          <ion-col col-3>
-             <ion-buttons end>
-                <button ion-button color="danger" (click)="  removeWorkout(workout)">Delete</button>
-             </ion-buttons>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+  <ion-list> 
+      <ion-item-sliding *ngFor="let workout of workouts">
+        <ion-item>
+        <ion-list-header>
+          {{ workout.title }}
+        </ion-list-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>
+              <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>
+              <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col> 
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item-options>
+            <button ion-button color="light" icon-left (click)="goToWorkoutDetailPage(workout)">
+            <ion-icon name="ios-more"></ion-icon>
+               View
+            </button>
+            <button ion-button color="danger" icon-left (click)="removeWorkout(workout)">
+            <ion-icon name="ios-trash"></ion-icon>
+               Delete
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>  
     
-  <ion-card style="text-align: center;">
+  <ion-item style="text-align: center;">
      <ion-fab bottom>
        <button ion-fab (click)="addWorkout()">+</button>
      </ion-fab>
-  </ion-card>
+  </ion-item>
 
 </ion-content>
