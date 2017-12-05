@@ -4,16 +4,11 @@
     <list default="true" id="59e43d7a-3c8d-4413-87a6-53733b53f8e2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/edit-workout/edit-workout.ts" afterPath="$PROJECT_DIR$/src/pages/edit-workout/edit-workout.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="$PROJECT_DIR$/www/build/1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="$PROJECT_DIR$/www/build/3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/6.js" afterPath="$PROJECT_DIR$/www/build/6.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/7.js" afterPath="$PROJECT_DIR$/www/build/7.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="$PROJECT_DIR$/www/build/vendor.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -33,34 +28,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="60" selection-end-column="54" />
+            <state relative-caret-position="562">
+              <caret line="85" column="3" lean-forward="true" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-                <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+                <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workout-detail.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/workout-detail/workout-detail.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="33" column="3" lean-forward="false" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-workout.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit-workout.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/edit-workout/edit-workout.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="89" column="23" lean-forward="false" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+            <state relative-caret-position="208">
+              <caret line="74" column="30" lean-forward="false" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -81,8 +66,8 @@
       <file leaf-file-name="workout-detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/workout-detail/workout-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -139,12 +124,12 @@
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/src/pages/add-workout/add-workout.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/pages/workout-detail/workout-detail.ts" />
-        <option value="$PROJECT_DIR$/src/pages/workout-detail/workout-detail.html" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/pages/edit-workout/edit-workout.html" />
         <option value="$PROJECT_DIR$/src/pages/edit-workout/edit-workout.ts" />
+        <option value="$PROJECT_DIR$/src/pages/workout-detail/workout-detail.html" />
+        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
       </list>
     </option>
   </component>
@@ -260,6 +245,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gymBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gymBuddy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-workouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -533,7 +540,7 @@
       <workItem from="1512453661636" duration="345000" />
       <workItem from="1512454013075" duration="203000" />
       <workItem from="1512454694744" duration="491000" />
-      <workItem from="1512483864378" duration="3676000" />
+      <workItem from="1512483864378" duration="5032000" />
     </task>
     <task id="LOCAL-00001" summary="Add Floating Action Button to home">
       <created>1512015574018</created>
@@ -546,7 +553,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46826000" />
+    <option name="totallyTimeSpent" value="48182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -650,7 +657,7 @@
           <caret line="52" column="3" lean-forward="false" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -681,7 +688,7 @@
           <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="27" selection-end-column="11" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -704,7 +711,7 @@
           <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -726,7 +733,7 @@
           <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -763,7 +770,7 @@
           <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -882,10 +889,10 @@
         <state relative-caret-position="1563">
           <caret line="943" column="19" lean-forward="false" selection-start-line="943" selection-start-column="19" selection-end-line="943" selection-end-column="19" />
           <folding>
-            <marker date="1512487789000" expanded="true" signature="57121:57138" ph="..." />
-            <marker date="1512487789000" expanded="true" signature="57121:57156" ph="..." />
-            <marker date="1512487789000" expanded="true" signature="57121:57169" ph="..." />
-            <marker date="1512487789000" expanded="true" signature="57121:57184" ph="..." />
+            <marker date="1512490711000" expanded="true" signature="57065:57082" ph="..." />
+            <marker date="1512490711000" expanded="true" signature="57065:57100" ph="..." />
+            <marker date="1512490711000" expanded="true" signature="57065:57113" ph="..." />
+            <marker date="1512490711000" expanded="true" signature="57065:57128" ph="..." />
           </folding>
         </state>
       </provider>
@@ -932,17 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="60" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <marker date="1512484131000" expanded="true" signature="1891:1897" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -971,8 +967,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/workout-detail/workout-detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -987,10 +983,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/edit-workout/edit-workout.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="89" column="23" lean-forward="false" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        <state relative-caret-position="208">
+          <caret line="74" column="30" lean-forward="false" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="85" column="3" lean-forward="true" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <marker date="1512490669000" expanded="true" signature="2708:2714" ph="{...}" />
           </folding>
         </state>
       </provider>
