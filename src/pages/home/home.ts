@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AddWorkoutPage } from "../add-workout/add-workout";
 import { WorkoutDetailPage } from "../workout-detail/workout-detail"
-import { Workout } from "../workout-detail/workout-detail"
 import firebase from 'firebase';
 
 @Component({
@@ -23,8 +22,10 @@ export class HomePage {
             this.workouts = [];
 
             snapshot.forEach( workoutSnapshot => {
+              let item = workoutSnapshot.val();
+              item.key = workoutSnapshot.key;
 
-              this.workouts.push(workoutSnapshot.val());
+              this.workouts.push(item);
               return false;
             });
         });
@@ -40,7 +41,9 @@ export class HomePage {
     this.navCtrl.push('AddWorkoutPage');
   }
   removeWorkout(workout){
-    this.workoutRef.remove(workout);
+    this.workoutsRef.child(workout.key).remove().then(function() {
+      console.log('Workout removed');
+    });
   }
 
   goToWorkoutDetailPage(workout) {
