@@ -18,6 +18,7 @@ export class EditWorkoutPage {
 
   public workout: any = {};
   public dbRef = firebase.database().ref();
+  public origAmount: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.workout = navParams.get("workout");
@@ -27,6 +28,8 @@ export class EditWorkoutPage {
     } else {
       console.log(this.workout)
     }
+
+    this.origAmount = (this.workout.setsOne*this.workout.repsOne + this.workout.setsTwo*this.workout.repsTwo + this.workout.setsThree*this.workout.repsThree);
   }
 
   ionViewDidLoad() {
@@ -69,7 +72,7 @@ export class EditWorkoutPage {
           return false;
         });
 
-        amount += (this.workout.setsOne*this.workout.repsOne + this.workout.setsTwo*this.workout.repsTwo + this.workout.setsThree*this.workout.repsThree);
+        amount += (-this.origAmount + this.workout.setsOne*this.workout.repsOne + this.workout.setsTwo*this.workout.repsTwo + this.workout.setsThree*this.workout.repsThree);
 
         this.dbRef.child('userProfile/' + uid + '/totals/' + key + '/amount').set(amount);
       } else {
@@ -77,12 +80,14 @@ export class EditWorkoutPage {
 
         let newTotal = {
           date: curr,
-          amount: (this.workout.setsOne*this.workout.repsOne + this.workout.setsTwo*this.workout.repsTwo + this.workout.setsThree*this.workout.repsThree)
+          amount: (-this.origAmount + this.workout.setsOne*this.workout.repsOne + this.workout.setsTwo*this.workout.repsTwo + this.workout.setsThree*this.workout.repsThree)
         };
 
         this.dbRef.child('userProfile/' + uid + '/totals/' + newTotalKey).set(newTotal);
       }
     });
+
+    this.navCtrl.pop();
   }
 
 }
