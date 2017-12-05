@@ -1,4 +1,6 @@
 idea/
 .idea
 node_modules/
-www/
+www
+/www/
+/.sourcemaps/
