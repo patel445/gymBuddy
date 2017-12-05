@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AddWorkoutPage } from "../add-workout/add-workout";
-import { WorkoutDetailPage } from "../workout-detail/workout-detail"
+import { WorkoutDetailPage } from "../workout-detail/workout-detail";
 import { SocialSharing } from '@ionic-native/social-sharing';
 import firebase from 'firebase';
 
