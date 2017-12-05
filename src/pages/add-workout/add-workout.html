@@ -1,0 +1,100 @@
+<!--
+  Generated template for the AddWorkoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Add Workout
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree)">
+      <ion-item>
+          <ion-label>Workout Title</ion-label>
+          <ion-input type="text"  [(ngModel)]="title" name="title"></ion-input>
+      </ion-item>
+
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-item>
+          <ion-label>Exercise Name</ion-label>
+          <ion-input  type="text" [(ngModel)]="nameOne" name="nameOne"></ion-input>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Sets</ion-label>
+          <ion-input  type="text" [(ngModel)]="setsOne" name="setsOne"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Reps</ion-label>
+          <ion-input  type="text" [(ngModel)]="repsOne" name="repsOne"></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+    </ion-card>
+    
+      <ion-card>
+
+          <ion-card-header>
+              <ion-item>
+                  <ion-label>Exercise Name</ion-label>
+                  <ion-input  type="text" [(ngModel)]="nameTwo" name="nameTwo"></ion-input>
+              </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+              <ion-item>
+                  <ion-label>Sets</ion-label>
+                  <ion-input  type="text" [(ngModel)]="setsTwo" name="setsTwo"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Reps</ion-label>
+                  <ion-input  type="text" [(ngModel)]="repsTwo" name="repsTwo"></ion-input>
+              </ion-item>
+          </ion-card-content>
+
+      </ion-card>
+
+      <ion-card>
+
+          <ion-card-header>
+              <ion-item>
+                  <ion-label>Exercise Name</ion-label>
+                  <ion-input  type="text" [(ngModel)]="nameThree" name="nameThree"></ion-input>
+              </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+              <ion-item>
+                  <ion-label>Sets</ion-label>
+                  <ion-input  type="text" [(ngModel)]="setsThree" name="setsThree"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Reps</ion-label>
+                  <ion-input  type="text" [(ngModel)]="repsThree" name="repsThree"></ion-input>
+              </ion-item>
+          </ion-card-content>
+
+      </ion-card>
+
+    <button ion-button type="submit" block>Add Workout</button>
+  </form>
+
+</ion-content>

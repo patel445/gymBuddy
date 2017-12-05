@@ -1,0 +1,54 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'firebase';
+
+/**
+ * Generated class for the AddWorkoutPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-add-workout',
+  templateUrl: 'add-workout.html',
+})
+export class AddWorkoutPage {
+
+  public workoutsRef = firebase.database().ref().child('workouts')
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AddWorkoutPage');
+  }
+
+  addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree) {
+    let newWorkoutKey = this.workoutsRef.push().key;
+
+    let workout = {
+      title: title,
+      nameOne: nameOne,
+      setsOne: setsOne,
+      repsOne: repsOne,
+      nameTwo: nameTwo,
+      setsTwo: setsTwo,
+      repsTwo: repsTwo,
+      nameThree: nameThree,
+      setsThree: setsThree,
+      repsThree: repsThree,
+      uid: firebase.auth().currentUser.uid,
+      addedAt: firebase.database.ServerValue.TIMESTAMP
+    };
+
+    // Check if total exists for day
+
+
+
+
+    this.navCtrl.pop();
+  }
+
+}
