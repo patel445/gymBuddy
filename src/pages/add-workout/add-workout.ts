@@ -56,11 +56,18 @@ export class AddWorkoutPage {
     let uid = firebase.auth().currentUser.uid;
     // Check if total exists for day
     this.dbRef.child('userProfile/' + uid + '/totals').orderByChild('date').equalTo(curr).once('value', snapshot => {
-      const total = snapshot.val();
-      const key = snapshot.key;
 
-      if(total) {
-        let amount = total.amount;
+      let key;
+      let amount = 0;
+
+      if(snapshot.exists()) {
+
+        snapshot.forEach( totalSnapshot => {
+          amount = totalSnapshot.val().amount;
+          key = totalSnapshot.key;
+
+          return false;
+        });
 
         amount += (setsOne*repsOne + setsTwo*repsTwo + setsThree*repsThree);
 

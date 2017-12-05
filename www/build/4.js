@@ -100,10 +100,14 @@ var AddWorkoutPage = (function () {
         var uid = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid;
         // Check if total exists for day
         this.dbRef.child('userProfile/' + uid + '/totals').orderByChild('date').equalTo(curr).once('value', function (snapshot) {
-            var total = snapshot.val();
-            var key = snapshot.key;
-            if (total) {
-                var amount = total.amount;
+            var key;
+            var amount = 0;
+            if (snapshot.exists()) {
+                snapshot.forEach(function (totalSnapshot) {
+                    amount = totalSnapshot.val().amount;
+                    key = totalSnapshot.key;
+                    return false;
+                });
                 amount += (setsOne * repsOne + setsTwo * repsTwo + setsThree * repsThree);
                 _this.dbRef.child('userProfile/' + uid + '/totals/' + key + '/amount').set(amount);
             }
@@ -122,9 +126,10 @@ var AddWorkoutPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-add-workout',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/add-workout/add-workout.html"*/'<!--\n  Generated template for the AddWorkoutPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n    <ion-navbar>\n        <ion-buttons left>\n            <button ion-button menuToggle>\n                <ion-icon name="menu"></ion-icon>\n            </button>\n        </ion-buttons>\n        <ion-title>\n            Add Workout\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <form (ngSubmit)="addWorkout(title, nameOne, setsOne, repsOne, nameTwo, setsTwo, repsTwo, nameThree, setsThree, repsThree)">\n      <ion-item>\n          <ion-label>Workout Title</ion-label>\n          <ion-input type="text"  [(ngModel)]="title" name="title"></ion-input>\n      </ion-item>\n\n\n    <ion-card>\n\n      <ion-card-header>\n        <ion-item>\n          <ion-label>Exercise Name</ion-label>\n          <ion-input  type="text" [(ngModel)]="nameOne" name="nameOne"></ion-input>\n        </ion-item>\n      </ion-card-header>\n\n      <ion-card-content>\n        <ion-item>\n          <ion-label>Sets</ion-label>\n          <ion-input  type="text" [(ngModel)]="setsOne" name="setsOne"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label>Reps</ion-label>\n          <ion-input  type="text" [(ngModel)]="repsOne" name="repsOne"></ion-input>\n        </ion-item>\n      </ion-card-content>\n\n    </ion-card>\n    \n      <ion-card>\n\n          <ion-card-header>\n              <ion-item>\n                  <ion-label>Exercise Name</ion-label>\n                  <ion-input  type="text" [(ngModel)]="nameTwo" name="nameTwo"></ion-input>\n              </ion-item>\n          </ion-card-header>\n\n          <ion-card-content>\n              <ion-item>\n                  <ion-label>Sets</ion-label>\n                  <ion-input  type="text" [(ngModel)]="setsTwo" name="setsTwo"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Reps</ion-label>\n                  <ion-input  type="text" [(ngModel)]="repsTwo" name="repsTwo"></ion-input>\n              </ion-item>\n          </ion-card-content>\n\n      </ion-card>\n\n      <ion-card>\n\n          <ion-card-header>\n              <ion-item>\n                  <ion-label>Exercise Name</ion-label>\n                  <ion-input  type="text" [(ngModel)]="nameThree" name="nameThree"></ion-input>\n              </ion-item>\n          </ion-card-header>\n\n          <ion-card-content>\n              <ion-item>\n                  <ion-label>Sets</ion-label>\n                  <ion-input  type="text" [(ngModel)]="setsThree" name="setsThree"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Reps</ion-label>\n                  <ion-input  type="text" [(ngModel)]="repsThree" name="repsThree"></ion-input>\n              </ion-item>\n          </ion-card-content>\n\n      </ion-card>\n\n    <button ion-button type="submit" block>Add Workout</button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/add-workout/add-workout.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
     ], AddWorkoutPage);
     return AddWorkoutPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=add-workout.js.map
