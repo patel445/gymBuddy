@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase'
+import {EditWorkoutPage} from "../edit-workout/edit-workout";
 
 /**
  * Generated class for the WorkoutDetailPage page.
@@ -30,6 +31,11 @@ export class WorkoutDetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WorkoutDetailPage');
+  }
+
+  goToEditWorkout(workout) {
+    let workoutTemp = {'workout': workout};
+    this.navCtrl.push(EditWorkoutPage, workoutTemp);
   }
 
 }
