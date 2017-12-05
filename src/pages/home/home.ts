@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AddWorkoutPage } from "../add-workout/add-workout";
 import { WorkoutDetailPage } from "../workout-detail/workout-detail"
+import { SocialSharing } from '@ionic-native/social-sharing';
 import firebase from 'firebase';
 
 @Component({
@@ -14,7 +15,7 @@ export class HomePage {
     public workouts: Array<any> = [];
     public workoutsRef: firebase.database.Reference = firebase.database().ref().child('workouts');
 
-    constructor(public navCtrl: NavController, public authProvider: AuthProvider) {
+    constructor(public navCtrl: NavController, private socialSharing: SocialSharing, public authProvider: AuthProvider) {
     }
 
     ionViewDidLoad() {
@@ -30,13 +31,18 @@ export class HomePage {
             });
         });
     }
-
+    
+regularShare(){
+    this.socialSharing.share("Checkout this workout", null, "www/assets/img/hulk.jpg", null); 
+  }
+  whatsappShare(){
+    this.socialSharing.shareViaWhatsApp("Checkout this workout", "www/assets/img/hulk.jpg", null); 
+  }
   logMeOut() {
     this.authProvider.logoutUser().then( () => {
       this.navCtrl.setRoot('LoginPage');
     });
   }
-
   addWorkout() {
     this.navCtrl.push('AddWorkoutPage');
   }
