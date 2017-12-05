@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ChartPage } from '../pages/chart/chart';
 import { AboutPage } from '../pages/about/about';
+import { MyWorkoutsPage } from '../pages/my-workouts/my-workouts'
 import firebase from 'firebase';
 
 @Component({
@@ -21,8 +22,9 @@ export class MyApp {
     this.zone = new NgZone({});
     this.pages = [
       { title: 'Homepage', component: HomePage },
-      { title: 'ChartPage', component: ChartPage },
-      { title: 'About', component: AboutPage }
+      { title: 'Chart Page', component: ChartPage },
+      { title: 'About', component: AboutPage },
+      { title: 'My Workouts Page', component: MyWorkoutsPage }
     ];
     const config = {
       apiKey: "AIzaSyCikpemXegYWxXFki5KI14nWQ3s5ZILzIM",

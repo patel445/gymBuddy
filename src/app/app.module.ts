@@ -12,6 +12,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { ChartsModule } from 'ng2-charts';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import {EditWorkoutPage} from "../pages/edit-workout/edit-workout";
+import {MyWorkoutsPage} from "../pages/my-workouts/my-workouts";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {EditWorkoutPage} from "../pages/edit-workout/edit-workout";
     ChartPage,
     AboutPage,
     WorkoutDetailPage,
-    EditWorkoutPage
+    EditWorkoutPage,
+    MyWorkoutsPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import {EditWorkoutPage} from "../pages/edit-workout/edit-workout";
     ChartPage,
     AboutPage,
     WorkoutDetailPage,
-    EditWorkoutPage
+    EditWorkoutPage,
+    MyWorkoutsPage
   ],
   providers: [
     StatusBar,

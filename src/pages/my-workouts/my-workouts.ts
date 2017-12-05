@@ -19,6 +19,7 @@ export class MyWorkoutsPage {
 
   public workouts: Array<any> = [];
   public workoutsRef: firebase.database.Reference = firebase.database().ref().child('workouts');
+  public myWorkoutsRef: firebase.database.Reference = firebase.database().ref('userProfile/' + firebase.auth().currentUser.uid + '/addedWorkouts');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -33,6 +34,24 @@ export class MyWorkoutsPage {
         return false;
       });
     });
+
+
+    this.myWorkoutsRef.once('value', snapshot => {
+      snapshot.forEach(keySnapshot => {
+
+        let workoutKey = keySnapshot.val();
+
+        this.workoutsRef.child(workoutKey).once('value', tempSnapshot => {
+          let workout = tempSnapshot.val()
+
+          this.workouts.push(workout);
+        });
+
+        return false;
+      })
+    });
+
+
     console.log('ionViewDidLoad MyWorkoutsPage');
   }
 

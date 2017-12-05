@@ -91,4 +91,16 @@ regularShare(){
     this.navCtrl.push(WorkoutDetailPage, workoutTemp);
   }
 
+  addWorkoutToMyWorkouts(workout) {
+    let newKey = workout.key;
+
+    let uid = firebase.auth().currentUser.uid;
+
+    let myRef = firebase.database().ref('userProfile/' + uid + '/addedWorkouts');
+
+    let newMyKey = myRef.push().key;
+
+    myRef.child(newMyKey).set(newKey);
+  }
+
 }
