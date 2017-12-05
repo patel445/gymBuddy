@@ -103,9 +103,11 @@ var HomePage = (function () {
         this.navCtrl.push('AddWorkoutPage');
     };
     HomePage.prototype.removeWorkout = function (workout) {
-        this.workoutsRef.child(workout.key).remove().then(function () {
-            console.log('Workout removed');
-        });
+        if ((workout.key != null) && (workout.key != '')) {
+            this.workoutsRef.child(workout.key).remove().then(function () {
+                console.log('Workout removed');
+            });
+        }
     };
     HomePage.prototype.goToWorkoutDetailPage = function (workout) {
         console.log(workout);
@@ -114,7 +116,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Homepage\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-list> \n      <ion-item-sliding *ngFor="let workout of workouts">\n        <ion-item>\n        <ion-list-header>\n          {{ workout.title }}\n        </ion-list-header>\n          <ion-grid>\n            <ion-row>\n              <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>\n              <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>\n              <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col> \n            </ion-row>\n          </ion-grid>\n        </ion-item>\n        <ion-item-options>\n            <button ion-button color="light" icon-left (click)="goToWorkoutDetailPage(workout)">\n            <ion-icon name="ios-more"></ion-icon>\n               View\n            </button>\n            <button ion-button color="danger" icon-left (click)="removeWorkout(workout)">\n            <ion-icon name="ios-trash"></ion-icon>\n               Delete\n            </button>\n        </ion-item-options>\n      </ion-item-sliding>\n  </ion-list>  \n    \n  <ion-item style="text-align: center;">\n     <ion-fab bottom>\n       <button ion-fab (click)="addWorkout()">+</button>\n     </ion-fab>\n  </ion-item>\n\n</ion-content>'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Homepage\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item-sliding *ngFor="let workout of workouts">\n        <ion-item>\n        <ion-list-header>\n          {{ workout.title }}\n        </ion-list-header>\n          <ion-grid>\n            <ion-row>\n              <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>\n              <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>\n              <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col> \n            </ion-row>\n          </ion-grid>\n        </ion-item>\n        <ion-item-options>\n            <button ion-button color="light" icon-left (click)="goToWorkoutDetailPage(workout)">\n            <ion-icon name="ios-more"></ion-icon>\n               View\n            </button>\n            <button ion-button color="danger" icon-left (click)="removeWorkout(workout)">\n            <ion-icon name="ios-trash"></ion-icon>\n               Delete\n            </button>\n        </ion-item-options>\n      </ion-item-sliding>\n\n  </ion-list>\n\n    <ion-fab bottom center>\n        <button ion-fab (click)="addWorkout()"><ion-icon name="add"></ion-icon></button>\n    </ion-fab>\n    \n\n</ion-content>'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _b || Object])
     ], HomePage);
@@ -225,8 +227,10 @@ var AboutPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -236,6 +240,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -249,34 +254,83 @@ var ChartPage = (function () {
     function ChartPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.amounts = [];
-        this.workouts = [];
-        this.workoutsRef = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref().child('workouts');
+        this.uid = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser.uid;
+        this.chartData = [];
+        this.days = [];
+        this.chartType = 'line';
+        this.totalsRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.uid + '/totals');
     }
     ChartPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChartPage');
-    };
-    ChartPage.prototype.getData = function () {
         var _this = this;
-        this.workoutsRef.orderByChild('uid')
-            .equalTo(__WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid)
-            .once('value', function (snapshot) {
-            _this.workouts = [];
-            snapshot.forEach(function (workoutSnapshot) {
-                _this.workouts.push(workoutSnapshot.val());
-                return false;
+        var tempChart = new __WEBPACK_IMPORTED_MODULE_2_chart_js__["Chart"](this.lineCanvas.nativeElement);
+        console.log('ionViewDidLoad ChartPage');
+        var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var today = new Date();
+        var day = new Date();
+        var dd, mm, yyyy, curr;
+        var _loop_1 = function (i) {
+            var that = this_1;
+            day = new Date(today.getTime() - ((6 - i) * 24 * 60 * 60 * 1000));
+            dd = day.getDate();
+            mm = day.getMonth() + 1;
+            yyyy = day.getFullYear();
+            curr = mm + '/' + dd + '/' + yyyy;
+            // console.log(curr);
+            // Add day name to data
+            this_1.days.push(dayNames[day.getDay()]);
+            //console.log(day.getDay());
+            // Add day amount to data
+            this_1.totalsRef.orderByChild('date').equalTo(curr).once('value', function (snapshot) {
+                //let temp = snapshot.val();
+                if (snapshot.val()) {
+                    console.log('Here');
+                    snapshot.forEach(function (totalSnapshot) {
+                        _this.chartData.unshift(totalSnapshot.val().amount);
+                        return false;
+                    });
+                }
+                else {
+                    _this.chartData.unshift(0);
+                }
+                // console.log(this.chartData[0].data);
+            }).then(function () {
+                that.lineChart = new __WEBPACK_IMPORTED_MODULE_2_chart_js__["Chart"](that.lineCanvas.nativeElement, {
+                    type: 'line',
+                    data: {
+                        labels: that.days,
+                        datasets: [{
+                                label: 'Reps this Week',
+                                data: that.chartData,
+                                fill: true
+                            }]
+                    }
+                });
             });
-        });
+        };
+        var this_1 = this;
+        for (var i = 0; i < 7; i++) {
+            _loop_1(i);
+        }
+        console.log(this.chartData);
     };
-    ChartPage.prototype.parseWorkouts = function () {
+    ChartPage.prototype.chartClicked = function () {
+        console.log('Chart Clicked');
     };
+    ChartPage.prototype.chartHovered = function () {
+        console.log('Chart Hovered');
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('lineCanvas'),
+        __metadata("design:type", Object)
+    ], ChartPage.prototype, "lineCanvas", void 0);
     ChartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-chart',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/'<!--\n  Generated template for the ChartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Chart Page\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/,
+            selector: 'page-chart',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/'<!--\n  Generated template for the ChartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Chart Page\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <canvas #lineCanvas></canvas>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
     ], ChartPage);
     return ChartPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=chart.js.map
@@ -353,13 +407,13 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 405:
+/***/ 406:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(406);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(430);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -367,7 +421,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 429:
+/***/ 430:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -375,15 +429,15 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(405);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(609);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_about_about__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_auth_auth__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts__ = __webpack_require__(610);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng2_charts__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -454,15 +508,268 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 561:
+/***/ 566:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 248,
+	"./af.js": 248,
+	"./ar": 249,
+	"./ar-dz": 250,
+	"./ar-dz.js": 250,
+	"./ar-kw": 251,
+	"./ar-kw.js": 251,
+	"./ar-ly": 252,
+	"./ar-ly.js": 252,
+	"./ar-ma": 253,
+	"./ar-ma.js": 253,
+	"./ar-sa": 254,
+	"./ar-sa.js": 254,
+	"./ar-tn": 255,
+	"./ar-tn.js": 255,
+	"./ar.js": 249,
+	"./az": 256,
+	"./az.js": 256,
+	"./be": 257,
+	"./be.js": 257,
+	"./bg": 258,
+	"./bg.js": 258,
+	"./bn": 259,
+	"./bn.js": 259,
+	"./bo": 260,
+	"./bo.js": 260,
+	"./br": 261,
+	"./br.js": 261,
+	"./bs": 262,
+	"./bs.js": 262,
+	"./ca": 263,
+	"./ca.js": 263,
+	"./cs": 264,
+	"./cs.js": 264,
+	"./cv": 265,
+	"./cv.js": 265,
+	"./cy": 266,
+	"./cy.js": 266,
+	"./da": 267,
+	"./da.js": 267,
+	"./de": 268,
+	"./de-at": 269,
+	"./de-at.js": 269,
+	"./de-ch": 270,
+	"./de-ch.js": 270,
+	"./de.js": 268,
+	"./dv": 271,
+	"./dv.js": 271,
+	"./el": 272,
+	"./el.js": 272,
+	"./en-au": 273,
+	"./en-au.js": 273,
+	"./en-ca": 274,
+	"./en-ca.js": 274,
+	"./en-gb": 275,
+	"./en-gb.js": 275,
+	"./en-ie": 276,
+	"./en-ie.js": 276,
+	"./en-nz": 277,
+	"./en-nz.js": 277,
+	"./eo": 278,
+	"./eo.js": 278,
+	"./es": 279,
+	"./es-do": 280,
+	"./es-do.js": 280,
+	"./es.js": 279,
+	"./et": 281,
+	"./et.js": 281,
+	"./eu": 282,
+	"./eu.js": 282,
+	"./fa": 283,
+	"./fa.js": 283,
+	"./fi": 284,
+	"./fi.js": 284,
+	"./fo": 285,
+	"./fo.js": 285,
+	"./fr": 286,
+	"./fr-ca": 287,
+	"./fr-ca.js": 287,
+	"./fr-ch": 288,
+	"./fr-ch.js": 288,
+	"./fr.js": 286,
+	"./fy": 289,
+	"./fy.js": 289,
+	"./gd": 290,
+	"./gd.js": 290,
+	"./gl": 291,
+	"./gl.js": 291,
+	"./gom-latn": 292,
+	"./gom-latn.js": 292,
+	"./he": 293,
+	"./he.js": 293,
+	"./hi": 294,
+	"./hi.js": 294,
+	"./hr": 295,
+	"./hr.js": 295,
+	"./hu": 296,
+	"./hu.js": 296,
+	"./hy-am": 297,
+	"./hy-am.js": 297,
+	"./id": 298,
+	"./id.js": 298,
+	"./is": 299,
+	"./is.js": 299,
+	"./it": 300,
+	"./it.js": 300,
+	"./ja": 301,
+	"./ja.js": 301,
+	"./jv": 302,
+	"./jv.js": 302,
+	"./ka": 303,
+	"./ka.js": 303,
+	"./kk": 304,
+	"./kk.js": 304,
+	"./km": 305,
+	"./km.js": 305,
+	"./kn": 306,
+	"./kn.js": 306,
+	"./ko": 307,
+	"./ko.js": 307,
+	"./ky": 308,
+	"./ky.js": 308,
+	"./lb": 309,
+	"./lb.js": 309,
+	"./lo": 310,
+	"./lo.js": 310,
+	"./lt": 311,
+	"./lt.js": 311,
+	"./lv": 312,
+	"./lv.js": 312,
+	"./me": 313,
+	"./me.js": 313,
+	"./mi": 314,
+	"./mi.js": 314,
+	"./mk": 315,
+	"./mk.js": 315,
+	"./ml": 316,
+	"./ml.js": 316,
+	"./mr": 317,
+	"./mr.js": 317,
+	"./ms": 318,
+	"./ms-my": 319,
+	"./ms-my.js": 319,
+	"./ms.js": 318,
+	"./my": 320,
+	"./my.js": 320,
+	"./nb": 321,
+	"./nb.js": 321,
+	"./ne": 322,
+	"./ne.js": 322,
+	"./nl": 323,
+	"./nl-be": 324,
+	"./nl-be.js": 324,
+	"./nl.js": 323,
+	"./nn": 325,
+	"./nn.js": 325,
+	"./pa-in": 326,
+	"./pa-in.js": 326,
+	"./pl": 327,
+	"./pl.js": 327,
+	"./pt": 328,
+	"./pt-br": 329,
+	"./pt-br.js": 329,
+	"./pt.js": 328,
+	"./ro": 330,
+	"./ro.js": 330,
+	"./ru": 331,
+	"./ru.js": 331,
+	"./sd": 332,
+	"./sd.js": 332,
+	"./se": 333,
+	"./se.js": 333,
+	"./si": 334,
+	"./si.js": 334,
+	"./sk": 335,
+	"./sk.js": 335,
+	"./sl": 336,
+	"./sl.js": 336,
+	"./sq": 337,
+	"./sq.js": 337,
+	"./sr": 338,
+	"./sr-cyrl": 339,
+	"./sr-cyrl.js": 339,
+	"./sr.js": 338,
+	"./ss": 340,
+	"./ss.js": 340,
+	"./sv": 341,
+	"./sv.js": 341,
+	"./sw": 342,
+	"./sw.js": 342,
+	"./ta": 343,
+	"./ta.js": 343,
+	"./te": 344,
+	"./te.js": 344,
+	"./tet": 345,
+	"./tet.js": 345,
+	"./th": 346,
+	"./th.js": 346,
+	"./tl-ph": 347,
+	"./tl-ph.js": 347,
+	"./tlh": 348,
+	"./tlh.js": 348,
+	"./tr": 349,
+	"./tr.js": 349,
+	"./tzl": 350,
+	"./tzl.js": 350,
+	"./tzm": 351,
+	"./tzm-latn": 352,
+	"./tzm-latn.js": 352,
+	"./tzm.js": 351,
+	"./uk": 353,
+	"./uk.js": 353,
+	"./ur": 354,
+	"./ur.js": 354,
+	"./uz": 355,
+	"./uz-latn": 356,
+	"./uz-latn.js": 356,
+	"./uz.js": 355,
+	"./vi": 357,
+	"./vi.js": 357,
+	"./x-pseudo": 358,
+	"./x-pseudo.js": 358,
+	"./yo": 359,
+	"./yo.js": 359,
+	"./zh-cn": 360,
+	"./zh-cn.js": 360,
+	"./zh-hk": 361,
+	"./zh-hk.js": 361,
+	"./zh-tw": 362,
+	"./zh-tw.js": 362
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 566;
+
+/***/ }),
+
+/***/ 609:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(150);
@@ -535,260 +842,7 @@ var MyApp = (function () {
 
 //# sourceMappingURL=app.component.js.map
 
-/***/ }),
-
-/***/ 594:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 290,
-	"./af.js": 290,
-	"./ar": 291,
-	"./ar-dz": 292,
-	"./ar-dz.js": 292,
-	"./ar-kw": 293,
-	"./ar-kw.js": 293,
-	"./ar-ly": 294,
-	"./ar-ly.js": 294,
-	"./ar-ma": 295,
-	"./ar-ma.js": 295,
-	"./ar-sa": 296,
-	"./ar-sa.js": 296,
-	"./ar-tn": 297,
-	"./ar-tn.js": 297,
-	"./ar.js": 291,
-	"./az": 298,
-	"./az.js": 298,
-	"./be": 299,
-	"./be.js": 299,
-	"./bg": 300,
-	"./bg.js": 300,
-	"./bn": 301,
-	"./bn.js": 301,
-	"./bo": 302,
-	"./bo.js": 302,
-	"./br": 303,
-	"./br.js": 303,
-	"./bs": 304,
-	"./bs.js": 304,
-	"./ca": 305,
-	"./ca.js": 305,
-	"./cs": 306,
-	"./cs.js": 306,
-	"./cv": 307,
-	"./cv.js": 307,
-	"./cy": 308,
-	"./cy.js": 308,
-	"./da": 309,
-	"./da.js": 309,
-	"./de": 310,
-	"./de-at": 311,
-	"./de-at.js": 311,
-	"./de-ch": 312,
-	"./de-ch.js": 312,
-	"./de.js": 310,
-	"./dv": 313,
-	"./dv.js": 313,
-	"./el": 314,
-	"./el.js": 314,
-	"./en-au": 315,
-	"./en-au.js": 315,
-	"./en-ca": 316,
-	"./en-ca.js": 316,
-	"./en-gb": 317,
-	"./en-gb.js": 317,
-	"./en-ie": 318,
-	"./en-ie.js": 318,
-	"./en-nz": 319,
-	"./en-nz.js": 319,
-	"./eo": 320,
-	"./eo.js": 320,
-	"./es": 321,
-	"./es-do": 322,
-	"./es-do.js": 322,
-	"./es.js": 321,
-	"./et": 323,
-	"./et.js": 323,
-	"./eu": 324,
-	"./eu.js": 324,
-	"./fa": 325,
-	"./fa.js": 325,
-	"./fi": 326,
-	"./fi.js": 326,
-	"./fo": 327,
-	"./fo.js": 327,
-	"./fr": 328,
-	"./fr-ca": 329,
-	"./fr-ca.js": 329,
-	"./fr-ch": 330,
-	"./fr-ch.js": 330,
-	"./fr.js": 328,
-	"./fy": 331,
-	"./fy.js": 331,
-	"./gd": 332,
-	"./gd.js": 332,
-	"./gl": 333,
-	"./gl.js": 333,
-	"./gom-latn": 334,
-	"./gom-latn.js": 334,
-	"./he": 335,
-	"./he.js": 335,
-	"./hi": 336,
-	"./hi.js": 336,
-	"./hr": 337,
-	"./hr.js": 337,
-	"./hu": 338,
-	"./hu.js": 338,
-	"./hy-am": 339,
-	"./hy-am.js": 339,
-	"./id": 340,
-	"./id.js": 340,
-	"./is": 341,
-	"./is.js": 341,
-	"./it": 342,
-	"./it.js": 342,
-	"./ja": 343,
-	"./ja.js": 343,
-	"./jv": 344,
-	"./jv.js": 344,
-	"./ka": 345,
-	"./ka.js": 345,
-	"./kk": 346,
-	"./kk.js": 346,
-	"./km": 347,
-	"./km.js": 347,
-	"./kn": 348,
-	"./kn.js": 348,
-	"./ko": 349,
-	"./ko.js": 349,
-	"./ky": 350,
-	"./ky.js": 350,
-	"./lb": 351,
-	"./lb.js": 351,
-	"./lo": 352,
-	"./lo.js": 352,
-	"./lt": 353,
-	"./lt.js": 353,
-	"./lv": 354,
-	"./lv.js": 354,
-	"./me": 355,
-	"./me.js": 355,
-	"./mi": 356,
-	"./mi.js": 356,
-	"./mk": 357,
-	"./mk.js": 357,
-	"./ml": 358,
-	"./ml.js": 358,
-	"./mr": 359,
-	"./mr.js": 359,
-	"./ms": 360,
-	"./ms-my": 361,
-	"./ms-my.js": 361,
-	"./ms.js": 360,
-	"./my": 362,
-	"./my.js": 362,
-	"./nb": 363,
-	"./nb.js": 363,
-	"./ne": 364,
-	"./ne.js": 364,
-	"./nl": 365,
-	"./nl-be": 366,
-	"./nl-be.js": 366,
-	"./nl.js": 365,
-	"./nn": 367,
-	"./nn.js": 367,
-	"./pa-in": 368,
-	"./pa-in.js": 368,
-	"./pl": 369,
-	"./pl.js": 369,
-	"./pt": 370,
-	"./pt-br": 371,
-	"./pt-br.js": 371,
-	"./pt.js": 370,
-	"./ro": 372,
-	"./ro.js": 372,
-	"./ru": 373,
-	"./ru.js": 373,
-	"./sd": 374,
-	"./sd.js": 374,
-	"./se": 375,
-	"./se.js": 375,
-	"./si": 376,
-	"./si.js": 376,
-	"./sk": 377,
-	"./sk.js": 377,
-	"./sl": 378,
-	"./sl.js": 378,
-	"./sq": 379,
-	"./sq.js": 379,
-	"./sr": 380,
-	"./sr-cyrl": 381,
-	"./sr-cyrl.js": 381,
-	"./sr.js": 380,
-	"./ss": 382,
-	"./ss.js": 382,
-	"./sv": 383,
-	"./sv.js": 383,
-	"./sw": 384,
-	"./sw.js": 384,
-	"./ta": 385,
-	"./ta.js": 385,
-	"./te": 386,
-	"./te.js": 386,
-	"./tet": 387,
-	"./tet.js": 387,
-	"./th": 388,
-	"./th.js": 388,
-	"./tl-ph": 389,
-	"./tl-ph.js": 389,
-	"./tlh": 390,
-	"./tlh.js": 390,
-	"./tr": 391,
-	"./tr.js": 391,
-	"./tzl": 392,
-	"./tzl.js": 392,
-	"./tzm": 393,
-	"./tzm-latn": 394,
-	"./tzm-latn.js": 394,
-	"./tzm.js": 393,
-	"./uk": 395,
-	"./uk.js": 395,
-	"./ur": 396,
-	"./ur.js": 396,
-	"./uz": 397,
-	"./uz-latn": 398,
-	"./uz-latn.js": 398,
-	"./uz.js": 397,
-	"./vi": 399,
-	"./vi.js": 399,
-	"./x-pseudo": 400,
-	"./x-pseudo.js": 400,
-	"./yo": 401,
-	"./yo.js": 401,
-	"./zh-cn": 402,
-	"./zh-cn.js": 402,
-	"./zh-hk": 403,
-	"./zh-hk.js": 403,
-	"./zh-tw": 404,
-	"./zh-tw.js": 404
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 594;
-
 /***/ })
 
-},[405]);
+},[406]);
 //# sourceMappingURL=main.js.map

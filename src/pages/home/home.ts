@@ -40,10 +40,13 @@ export class HomePage {
   addWorkout() {
     this.navCtrl.push('AddWorkoutPage');
   }
+
   removeWorkout(workout){
-    this.workoutsRef.child(workout.key).remove().then(function() {
-      console.log('Workout removed');
-    });
+      if((workout.key != null) && (workout.key != '')) {
+        this.workoutsRef.child(workout.key).remove().then(function() {
+          console.log('Workout removed');
+        });
+      }
   }
 
   goToWorkoutDetailPage(workout) {
