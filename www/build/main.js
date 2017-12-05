@@ -1,4 +1,4 @@
-webpackJsonp([8],{
+webpackJsonp([9],{
 
 /***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,7 +6,7 @@ webpackJsonp([8],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -53,66 +53,13 @@ var AuthProvider = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkoutDetailPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the WorkoutDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var WorkoutDetailPage = (function () {
-    function WorkoutDetailPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.workout = {};
-        this.workout = navParams.get("workout");
-        if (this.workout == null) {
-            console.log('Workout not found');
-        }
-        else {
-            console.log(this.workout);
-        }
-    }
-    WorkoutDetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad WorkoutDetailPage');
-    };
-    WorkoutDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-workout-detail',template:/*ion-inline-start:"/Users/patel445/Desktop/gymBuddy/src/pages/workout-detail/workout-detail.html"*/'<!--\n  Generated template for the WorkoutDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Add Workout\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <h1>{{ workout.title }}</h1>\n\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameOne }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsOne }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsOne }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameTwo }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsTwo }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsTwo }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameThree }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsThree }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsThree }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/patel445/Desktop/gymBuddy/src/pages/workout-detail/workout-detail.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], WorkoutDetailPage);
-    return WorkoutDetailPage;
-}());
-
-//# sourceMappingURL=workout-detail.js.map
-
-/***/ }),
-
-/***/ 150:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__workout_detail_workout_detail__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__workout_detail_workout_detail__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -165,11 +112,31 @@ var HomePage = (function () {
         this.navCtrl.push('AddWorkoutPage');
     };
     HomePage.prototype.removeWorkout = function (workout) {
+        var workoutAmount = workout.setsOne * workout.repsOne + workout.setsTwo * workout.repsTwo + workout.setsThree * workout.repsThree;
         if ((workout.key != null) && (workout.key != '')) {
             this.workoutsRef.child(workout.key).remove().then(function () {
                 console.log('Workout removed');
             });
         }
+        var key;
+        var amount = 0;
+        var that = this;
+        __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref('userProfile/' + __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.auth().currentUser.uid + '/totals')
+            .orderByChild('date')
+            .equalTo(workout.addedAt)
+            .once('value', function (snapshot) {
+            snapshot.forEach(function (totalSnapshot) {
+                amount = totalSnapshot.val().amount;
+                key = totalSnapshot.key;
+                return false;
+            });
+        }).then(function (that) {
+            console.log('found workout');
+            var newAmount = amount - workoutAmount;
+            __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref('userProfile/' + __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.auth().currentUser.uid + '/totals/' + key)
+                .child('amount')
+                .set(newAmount);
+        });
     };
     HomePage.prototype.goToWorkoutDetailPage = function (workout) {
         console.log(workout);
@@ -178,14 +145,74 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/patel445/Desktop/gymBuddy/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Homepage\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item-sliding *ngFor="let workout of workouts">\n        <ion-item>\n        <ion-list-header>\n          {{ workout.title }}\n        </ion-list-header>\n          <ion-grid>\n            <ion-row>\n              <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>\n              <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>\n              <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col> \n            </ion-row>\n          </ion-grid>\n        </ion-item>\n        <ion-item-options>\n            <button ion-button color="light" icon-left (click)="goToWorkoutDetailPage(workout)">\n            <ion-icon name="ios-more"></ion-icon>\n               View\n            </button>\n            <button ion-button color="danger" icon-left (click)="removeWorkout(workout)">\n            <ion-icon name="ios-trash"></ion-icon>\n               Delete\n            </button>\n            <button ion-button icon-only (click)="regularShare()" color="dark" clear>\n               <ion-icon class="share-icon" name="ios-text"></ion-icon>\n            </button>\n            <button ion-button icon-only (click)="whatsappShare()" color="dark" clear>\n               <ion-icon class="share-icon" name="logo-whatsapp"></ion-icon>\n            </button>\n        </ion-item-options>\n      </ion-item-sliding>\n\n  </ion-list>\n\n    <ion-fab bottom center>\n        <button ion-fab (click)="addWorkout()"><ion-icon name="add"></ion-icon></button>\n    </ion-fab>\n    \n\n</ion-content>'/*ion-inline-end:"/Users/patel445/Desktop/gymBuddy/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Homepage\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item-sliding *ngFor="let workout of workouts">\n        <ion-item>\n        <ion-list-header>\n          {{ workout.title }}\n        </ion-list-header>\n          <ion-grid>\n            <ion-row>\n              <ion-col col-4>{{ workout.nameOne }} - {{ workout.setsOne }}x{{ workout.repsOne }}</ion-col>\n              <ion-col col-4>{{ workout.nameTwo }} - {{ workout.setsTwo }}x{{ workout.repsTwo }}</ion-col>\n              <ion-col col-4>{{ workout.nameThree }} - {{ workout.setsThree }}x{{ workout.repsThree }}</ion-col> \n            </ion-row>\n          </ion-grid>\n        </ion-item>\n        <ion-item-options>\n            <button ion-button color="light" icon-left (click)="goToWorkoutDetailPage(workout)">\n            <ion-icon name="ios-more"></ion-icon>\n               View\n            </button>\n            <button ion-button color="danger" icon-left (click)="removeWorkout(workout)">\n            <ion-icon name="ios-trash"></ion-icon>\n               Delete\n            </button>\n            <button ion-button icon-only (click)="regularShare()" color="dark" clear>\n               <ion-icon class="share-icon" name="ios-text"></ion-icon>\n            </button>\n            <button ion-button icon-only (click)="whatsappShare()" color="dark" clear>\n               <ion-icon class="share-icon" name="logo-whatsapp"></ion-icon>\n            </button>\n        </ion-item-options>\n      </ion-item-sliding>\n\n  </ion-list>\n\n    <ion-fab bottom center>\n        <button ion-fab (click)="addWorkout()"><ion-icon name="add"></ion-icon></button>\n    </ion-fab>\n    \n\n</ion-content>'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_social_sharing__["a" /* SocialSharing */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 150:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkoutDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_workout_edit_workout__ = __webpack_require__(153);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the WorkoutDetailPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var WorkoutDetailPage = (function () {
+    function WorkoutDetailPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.workout = {};
+        this.workout = navParams.get("workout");
+        if (this.workout == null) {
+            console.log('Workout not found');
+        }
+        else {
+            console.log(this.workout);
+        }
+    }
+    WorkoutDetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad WorkoutDetailPage');
+    };
+    WorkoutDetailPage.prototype.goToEditWorkout = function (workout) {
+        var workoutTemp = { 'workout': workout };
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__edit_workout_edit_workout__["a" /* EditWorkoutPage */], workoutTemp);
+    };
+    WorkoutDetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-workout-detail',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/workout-detail/workout-detail.html"*/'<!--\n  Generated template for the WorkoutDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Workout\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <h1>{{ workout.title }}</h1>\n\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameOne }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsOne }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsOne }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameTwo }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsTwo }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsTwo }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n      {{ workout.nameThree }}\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-6>Sets: {{ workout.setsThree }}</ion-col>\n          <ion-col col-6>Reps: {{ workout.repsThree }}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n\n  </ion-card>\n\n  <button ion-button full (click)="goToEditWorkout(workout)">Edit Workout</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/workout-detail/workout-detail.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], WorkoutDetailPage);
+    return WorkoutDetailPage;
+}());
+
+//# sourceMappingURL=workout-detail.js.map
 
 /***/ }),
 
@@ -195,7 +222,7 @@ var HomePage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -217,7 +244,7 @@ var AboutPage = (function () {
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'about-page',template:/*ion-inline-start:"/Users/patel445/Desktop/gymBuddy/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      About\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n   <p>Thank you for trying our application</p>\n   <p>Create a workout day and share with others</p>\n   <p>Creators: Jay Patel and Peter Jones</p>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/patel445/Desktop/gymBuddy/src/pages/about/about.html"*/,
+            selector: 'about-page',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      About\n    </ion-title>\n    <ion-buttons end>\n    <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n   <p>Thank you for trying our application</p>\n   <p>Create a workout day and share with others</p>\n   <p>Creators: Jay Patel and Peter Jones</p>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/about/about.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], AboutPage);
@@ -234,10 +261,10 @@ var AboutPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -333,7 +360,7 @@ var ChartPage = (function () {
     ], ChartPage.prototype, "lineCanvas", void 0);
     ChartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-chart',template:/*ion-inline-start:"/Users/patel445/Desktop/gymBuddy/src/pages/chart/chart.html"*/'<!--\n  Generated template for the ChartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Chart Page\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <canvas #lineCanvas></canvas>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/patel445/Desktop/gymBuddy/src/pages/chart/chart.html"*/,
+            selector: 'page-chart',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/'<!--\n  Generated template for the ChartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Chart Page\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button color="danger" (click)="logMeOut()">Logout</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <canvas #lineCanvas></canvas>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/chart/chart.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ChartPage);
@@ -344,7 +371,103 @@ var ChartPage = (function () {
 
 /***/ }),
 
-/***/ 162:
+/***/ 153:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditWorkoutPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the EditWorkoutPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EditWorkoutPage = (function () {
+    function EditWorkoutPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.workout = {};
+        this.dbRef = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref();
+        this.workout = navParams.get("workout");
+        if (this.workout == null) {
+            console.log('Workout not found');
+        }
+        else {
+            console.log(this.workout);
+        }
+        this.origAmount = (this.workout.setsOne * this.workout.repsOne + this.workout.setsTwo * this.workout.repsTwo + this.workout.setsThree * this.workout.repsThree);
+    }
+    EditWorkoutPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EditWorkoutPage');
+    };
+    EditWorkoutPage.prototype.editWorkout = function () {
+        var _this = this;
+        console.log(this.workout);
+        var workoutKey = this.workout.key;
+        delete Object.getPrototypeOf(this.workout).key;
+        this.dbRef.child('workouts/' + workoutKey).set(this.workout).then(function () {
+            console.log('Updated workout');
+        });
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        var curr = mm + '/' + dd + '/' + yyyy;
+        var uid = __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.auth().currentUser.uid;
+        // Check if total exists for day
+        this.dbRef.child('userProfile/' + uid + '/totals').orderByChild('date').equalTo(curr).once('value', function (snapshot) {
+            var key;
+            var amount = 0;
+            if (snapshot.exists()) {
+                snapshot.forEach(function (totalSnapshot) {
+                    amount = totalSnapshot.val().amount;
+                    key = totalSnapshot.key;
+                    return false;
+                });
+                amount += (-_this.origAmount + _this.workout.setsOne * _this.workout.repsOne + _this.workout.setsTwo * _this.workout.repsTwo + _this.workout.setsThree * _this.workout.repsThree);
+                _this.dbRef.child('userProfile/' + uid + '/totals/' + key + '/amount').set(amount);
+            }
+            else {
+                var newTotalKey = _this.dbRef.child('userProfile/' + uid + '/totals').push().key;
+                var newTotal = {
+                    date: curr,
+                    amount: (-_this.origAmount + _this.workout.setsOne * _this.workout.repsOne + _this.workout.setsTwo * _this.workout.repsTwo + _this.workout.setsThree * _this.workout.repsThree)
+                };
+                _this.dbRef.child('userProfile/' + uid + '/totals/' + newTotalKey).set(newTotal);
+            }
+        });
+        this.navCtrl.pop();
+    };
+    EditWorkoutPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-edit-workout',template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/edit-workout/edit-workout.html"*/'<!--\n  Generated template for the AddWorkoutPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar>\n    <ion-buttons left>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Edit Workout\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <form (ngSubmit)="editWorkout()">\n    <ion-item>\n      <ion-label>Workout Title</ion-label>\n      <ion-input type="text" value="{{ workout.title }}" [(ngModel)]="workout.title" name="title"></ion-input>\n    </ion-item>\n\n\n    <ion-card>\n\n      <ion-card-header>\n        <ion-item>\n          <ion-label>Exercise Name</ion-label>\n          <ion-input  type="text" value="{{ workout.nameOne }}" [(ngModel)]="workout.nameOne" name="nameOne"></ion-input>\n        </ion-item>\n      </ion-card-header>\n\n      <ion-card-content>\n        <ion-item>\n          <ion-label>Sets</ion-label>\n          <ion-input  type="text" value="{{ workout.setsOne }}" [(ngModel)]="workout.setsOne" name="setsOne"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label>Reps</ion-label>\n          <ion-input  type="text" value="{{ workout.repsOne }}" [(ngModel)]="workout.repsOne" name="repsOne"></ion-input>\n        </ion-item>\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-card>\n\n      <ion-card-header>\n        <ion-item>\n          <ion-label>Exercise Name</ion-label>\n          <ion-input  type="text" value="{{ workout.nameTwo }}" [(ngModel)]="workout.nameTwo" name="nameTwo"></ion-input>\n        </ion-item>\n      </ion-card-header>\n\n      <ion-card-content>\n        <ion-item>\n          <ion-label>Sets</ion-label>\n          <ion-input  type="text" value="{{ workout.setsTwo }}" [(ngModel)]="workout.setsTwo" name="setsTwo"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label>Reps</ion-label>\n          <ion-input  type="text" value="{{ workout.repsTwo }}" [(ngModel)]="workout.repsTwo" name="repsTwo"></ion-input>\n        </ion-item>\n      </ion-card-content>\n\n    </ion-card>\n\n    <ion-card>\n\n      <ion-card-header>\n        <ion-item>\n          <ion-label>Exercise Name</ion-label>\n          <ion-input  type="text" value="{{ workout.nameThree }}" [(ngModel)]="workout.nameThree" name="nameThree"></ion-input>\n        </ion-item>\n      </ion-card-header>\n\n      <ion-card-content>\n        <ion-item>\n          <ion-label>Sets</ion-label>\n          <ion-input  type="text" value="{{ workout.setsThree }}" [(ngModel)]="workout.setsThree" name="setsThree"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label>Reps</ion-label>\n          <ion-input  type="text" value="{{ workout.repsThree }}" [(ngModel)]="workout.repsThree" name="repsThree"></ion-input>\n        </ion-item>\n      </ion-card-content>\n\n    </ion-card>\n\n    <button ion-button type="submit" block>Edit Workout</button>\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/pages/edit-workout/edit-workout.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], EditWorkoutPage);
+    return EditWorkoutPage;
+}());
+
+//# sourceMappingURL=edit-workout.js.map
+
+/***/ }),
+
+/***/ 163:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -357,44 +480,48 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 162;
+webpackEmptyAsyncContext.id = 163;
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about/about.module": [
-		613,
-		7
+		614,
+		8
 	],
 	"../pages/add-workout/add-workout.module": [
-		614,
+		615,
 		4
 	],
 	"../pages/chart/chart.module": [
-		615,
+		616,
+		7
+	],
+	"../pages/edit-workout/edit-workout.module": [
+		617,
 		6
 	],
 	"../pages/login/login.module": [
-		620,
+		618,
 		2
 	],
 	"../pages/my-workouts/my-workouts.module": [
-		616,
+		619,
 		3
 	],
 	"../pages/password-reset/password-reset.module": [
-		617,
+		620,
 		1
 	],
 	"../pages/signup/signup.module": [
-		618,
+		621,
 		0
 	],
 	"../pages/workout-detail/workout-detail.module": [
-		619,
+		622,
 		5
 	]
 };
@@ -409,18 +536,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 203;
+webpackAsyncContext.id = 204;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 407:
+/***/ 408:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(408);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(432);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -428,31 +555,33 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 431:
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(610);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(611);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_about_about__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_auth_auth__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts__ = __webpack_require__(611);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts__ = __webpack_require__(612);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng2_charts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_social_sharing__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_social_sharing__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_edit_workout_edit_workout__ = __webpack_require__(153);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -476,7 +605,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__["a" /* ChartPage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__["a" /* WorkoutDetailPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__["a" /* WorkoutDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_edit_workout_edit_workout__["a" /* EditWorkoutPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -485,11 +615,12 @@ var AppModule = (function () {
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-workout/add-workout.module#AddWorkoutPageModule', name: 'AddWorkoutPage', segment: 'add-workout', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chart/chart.module#ChartPageModule', name: 'ChartPage', segment: 'chart', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/edit-workout/edit-workout.module#EditWorkoutPageModule', name: 'EditWorkoutPage', segment: 'edit-workout', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/my-workouts/my-workouts.module#MyWorkoutsPageModule', name: 'MyWorkoutsPage', segment: 'my-workouts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-reset/password-reset.module#PasswordResetPageModule', name: 'PasswordResetPage', segment: 'password-reset', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/workout-detail/workout-detail.module#WorkoutDetailPageModule', name: 'WorkoutDetailPage', segment: 'workout-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/workout-detail/workout-detail.module#WorkoutDetailPageModule', name: 'WorkoutDetailPage', segment: 'workout-detail', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_11_ng2_charts__["ChartsModule"]
@@ -500,7 +631,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__["a" /* ChartPage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__["a" /* WorkoutDetailPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_workout_detail_workout_detail__["a" /* WorkoutDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_edit_workout_edit_workout__["a" /* EditWorkoutPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -518,240 +650,240 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 567:
+/***/ 568:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 249,
-	"./af.js": 249,
-	"./ar": 250,
-	"./ar-dz": 251,
-	"./ar-dz.js": 251,
-	"./ar-kw": 252,
-	"./ar-kw.js": 252,
-	"./ar-ly": 253,
-	"./ar-ly.js": 253,
-	"./ar-ma": 254,
-	"./ar-ma.js": 254,
-	"./ar-sa": 255,
-	"./ar-sa.js": 255,
-	"./ar-tn": 256,
-	"./ar-tn.js": 256,
-	"./ar.js": 250,
-	"./az": 257,
-	"./az.js": 257,
-	"./be": 258,
-	"./be.js": 258,
-	"./bg": 259,
-	"./bg.js": 259,
-	"./bn": 260,
-	"./bn.js": 260,
-	"./bo": 261,
-	"./bo.js": 261,
-	"./br": 262,
-	"./br.js": 262,
-	"./bs": 263,
-	"./bs.js": 263,
-	"./ca": 264,
-	"./ca.js": 264,
-	"./cs": 265,
-	"./cs.js": 265,
-	"./cv": 266,
-	"./cv.js": 266,
-	"./cy": 267,
-	"./cy.js": 267,
-	"./da": 268,
-	"./da.js": 268,
-	"./de": 269,
-	"./de-at": 270,
-	"./de-at.js": 270,
-	"./de-ch": 271,
-	"./de-ch.js": 271,
-	"./de.js": 269,
-	"./dv": 272,
-	"./dv.js": 272,
-	"./el": 273,
-	"./el.js": 273,
-	"./en-au": 274,
-	"./en-au.js": 274,
-	"./en-ca": 275,
-	"./en-ca.js": 275,
-	"./en-gb": 276,
-	"./en-gb.js": 276,
-	"./en-ie": 277,
-	"./en-ie.js": 277,
-	"./en-nz": 278,
-	"./en-nz.js": 278,
-	"./eo": 279,
-	"./eo.js": 279,
-	"./es": 280,
-	"./es-do": 281,
-	"./es-do.js": 281,
-	"./es.js": 280,
-	"./et": 282,
-	"./et.js": 282,
-	"./eu": 283,
-	"./eu.js": 283,
-	"./fa": 284,
-	"./fa.js": 284,
-	"./fi": 285,
-	"./fi.js": 285,
-	"./fo": 286,
-	"./fo.js": 286,
-	"./fr": 287,
-	"./fr-ca": 288,
-	"./fr-ca.js": 288,
-	"./fr-ch": 289,
-	"./fr-ch.js": 289,
-	"./fr.js": 287,
-	"./fy": 290,
-	"./fy.js": 290,
-	"./gd": 291,
-	"./gd.js": 291,
-	"./gl": 292,
-	"./gl.js": 292,
-	"./gom-latn": 293,
-	"./gom-latn.js": 293,
-	"./he": 294,
-	"./he.js": 294,
-	"./hi": 295,
-	"./hi.js": 295,
-	"./hr": 296,
-	"./hr.js": 296,
-	"./hu": 297,
-	"./hu.js": 297,
-	"./hy-am": 298,
-	"./hy-am.js": 298,
-	"./id": 299,
-	"./id.js": 299,
-	"./is": 300,
-	"./is.js": 300,
-	"./it": 301,
-	"./it.js": 301,
-	"./ja": 302,
-	"./ja.js": 302,
-	"./jv": 303,
-	"./jv.js": 303,
-	"./ka": 304,
-	"./ka.js": 304,
-	"./kk": 305,
-	"./kk.js": 305,
-	"./km": 306,
-	"./km.js": 306,
-	"./kn": 307,
-	"./kn.js": 307,
-	"./ko": 308,
-	"./ko.js": 308,
-	"./ky": 309,
-	"./ky.js": 309,
-	"./lb": 310,
-	"./lb.js": 310,
-	"./lo": 311,
-	"./lo.js": 311,
-	"./lt": 312,
-	"./lt.js": 312,
-	"./lv": 313,
-	"./lv.js": 313,
-	"./me": 314,
-	"./me.js": 314,
-	"./mi": 315,
-	"./mi.js": 315,
-	"./mk": 316,
-	"./mk.js": 316,
-	"./ml": 317,
-	"./ml.js": 317,
-	"./mr": 318,
-	"./mr.js": 318,
-	"./ms": 319,
-	"./ms-my": 320,
-	"./ms-my.js": 320,
-	"./ms.js": 319,
-	"./my": 321,
-	"./my.js": 321,
-	"./nb": 322,
-	"./nb.js": 322,
-	"./ne": 323,
-	"./ne.js": 323,
-	"./nl": 324,
-	"./nl-be": 325,
-	"./nl-be.js": 325,
-	"./nl.js": 324,
-	"./nn": 326,
-	"./nn.js": 326,
-	"./pa-in": 327,
-	"./pa-in.js": 327,
-	"./pl": 328,
-	"./pl.js": 328,
-	"./pt": 329,
-	"./pt-br": 330,
-	"./pt-br.js": 330,
-	"./pt.js": 329,
-	"./ro": 331,
-	"./ro.js": 331,
-	"./ru": 332,
-	"./ru.js": 332,
-	"./sd": 333,
-	"./sd.js": 333,
-	"./se": 334,
-	"./se.js": 334,
-	"./si": 335,
-	"./si.js": 335,
-	"./sk": 336,
-	"./sk.js": 336,
-	"./sl": 337,
-	"./sl.js": 337,
-	"./sq": 338,
-	"./sq.js": 338,
-	"./sr": 339,
-	"./sr-cyrl": 340,
-	"./sr-cyrl.js": 340,
-	"./sr.js": 339,
-	"./ss": 341,
-	"./ss.js": 341,
-	"./sv": 342,
-	"./sv.js": 342,
-	"./sw": 343,
-	"./sw.js": 343,
-	"./ta": 344,
-	"./ta.js": 344,
-	"./te": 345,
-	"./te.js": 345,
-	"./tet": 346,
-	"./tet.js": 346,
-	"./th": 347,
-	"./th.js": 347,
-	"./tl-ph": 348,
-	"./tl-ph.js": 348,
-	"./tlh": 349,
-	"./tlh.js": 349,
-	"./tr": 350,
-	"./tr.js": 350,
-	"./tzl": 351,
-	"./tzl.js": 351,
-	"./tzm": 352,
-	"./tzm-latn": 353,
-	"./tzm-latn.js": 353,
-	"./tzm.js": 352,
-	"./uk": 354,
-	"./uk.js": 354,
-	"./ur": 355,
-	"./ur.js": 355,
-	"./uz": 356,
-	"./uz-latn": 357,
-	"./uz-latn.js": 357,
-	"./uz.js": 356,
-	"./vi": 358,
-	"./vi.js": 358,
-	"./x-pseudo": 359,
-	"./x-pseudo.js": 359,
-	"./yo": 360,
-	"./yo.js": 360,
-	"./zh-cn": 361,
-	"./zh-cn.js": 361,
-	"./zh-hk": 362,
-	"./zh-hk.js": 362,
-	"./zh-tw": 363,
-	"./zh-tw.js": 363
+	"./af": 250,
+	"./af.js": 250,
+	"./ar": 251,
+	"./ar-dz": 252,
+	"./ar-dz.js": 252,
+	"./ar-kw": 253,
+	"./ar-kw.js": 253,
+	"./ar-ly": 254,
+	"./ar-ly.js": 254,
+	"./ar-ma": 255,
+	"./ar-ma.js": 255,
+	"./ar-sa": 256,
+	"./ar-sa.js": 256,
+	"./ar-tn": 257,
+	"./ar-tn.js": 257,
+	"./ar.js": 251,
+	"./az": 258,
+	"./az.js": 258,
+	"./be": 259,
+	"./be.js": 259,
+	"./bg": 260,
+	"./bg.js": 260,
+	"./bn": 261,
+	"./bn.js": 261,
+	"./bo": 262,
+	"./bo.js": 262,
+	"./br": 263,
+	"./br.js": 263,
+	"./bs": 264,
+	"./bs.js": 264,
+	"./ca": 265,
+	"./ca.js": 265,
+	"./cs": 266,
+	"./cs.js": 266,
+	"./cv": 267,
+	"./cv.js": 267,
+	"./cy": 268,
+	"./cy.js": 268,
+	"./da": 269,
+	"./da.js": 269,
+	"./de": 270,
+	"./de-at": 271,
+	"./de-at.js": 271,
+	"./de-ch": 272,
+	"./de-ch.js": 272,
+	"./de.js": 270,
+	"./dv": 273,
+	"./dv.js": 273,
+	"./el": 274,
+	"./el.js": 274,
+	"./en-au": 275,
+	"./en-au.js": 275,
+	"./en-ca": 276,
+	"./en-ca.js": 276,
+	"./en-gb": 277,
+	"./en-gb.js": 277,
+	"./en-ie": 278,
+	"./en-ie.js": 278,
+	"./en-nz": 279,
+	"./en-nz.js": 279,
+	"./eo": 280,
+	"./eo.js": 280,
+	"./es": 281,
+	"./es-do": 282,
+	"./es-do.js": 282,
+	"./es.js": 281,
+	"./et": 283,
+	"./et.js": 283,
+	"./eu": 284,
+	"./eu.js": 284,
+	"./fa": 285,
+	"./fa.js": 285,
+	"./fi": 286,
+	"./fi.js": 286,
+	"./fo": 287,
+	"./fo.js": 287,
+	"./fr": 288,
+	"./fr-ca": 289,
+	"./fr-ca.js": 289,
+	"./fr-ch": 290,
+	"./fr-ch.js": 290,
+	"./fr.js": 288,
+	"./fy": 291,
+	"./fy.js": 291,
+	"./gd": 292,
+	"./gd.js": 292,
+	"./gl": 293,
+	"./gl.js": 293,
+	"./gom-latn": 294,
+	"./gom-latn.js": 294,
+	"./he": 295,
+	"./he.js": 295,
+	"./hi": 296,
+	"./hi.js": 296,
+	"./hr": 297,
+	"./hr.js": 297,
+	"./hu": 298,
+	"./hu.js": 298,
+	"./hy-am": 299,
+	"./hy-am.js": 299,
+	"./id": 300,
+	"./id.js": 300,
+	"./is": 301,
+	"./is.js": 301,
+	"./it": 302,
+	"./it.js": 302,
+	"./ja": 303,
+	"./ja.js": 303,
+	"./jv": 304,
+	"./jv.js": 304,
+	"./ka": 305,
+	"./ka.js": 305,
+	"./kk": 306,
+	"./kk.js": 306,
+	"./km": 307,
+	"./km.js": 307,
+	"./kn": 308,
+	"./kn.js": 308,
+	"./ko": 309,
+	"./ko.js": 309,
+	"./ky": 310,
+	"./ky.js": 310,
+	"./lb": 311,
+	"./lb.js": 311,
+	"./lo": 312,
+	"./lo.js": 312,
+	"./lt": 313,
+	"./lt.js": 313,
+	"./lv": 314,
+	"./lv.js": 314,
+	"./me": 315,
+	"./me.js": 315,
+	"./mi": 316,
+	"./mi.js": 316,
+	"./mk": 317,
+	"./mk.js": 317,
+	"./ml": 318,
+	"./ml.js": 318,
+	"./mr": 319,
+	"./mr.js": 319,
+	"./ms": 320,
+	"./ms-my": 321,
+	"./ms-my.js": 321,
+	"./ms.js": 320,
+	"./my": 322,
+	"./my.js": 322,
+	"./nb": 323,
+	"./nb.js": 323,
+	"./ne": 324,
+	"./ne.js": 324,
+	"./nl": 325,
+	"./nl-be": 326,
+	"./nl-be.js": 326,
+	"./nl.js": 325,
+	"./nn": 327,
+	"./nn.js": 327,
+	"./pa-in": 328,
+	"./pa-in.js": 328,
+	"./pl": 329,
+	"./pl.js": 329,
+	"./pt": 330,
+	"./pt-br": 331,
+	"./pt-br.js": 331,
+	"./pt.js": 330,
+	"./ro": 332,
+	"./ro.js": 332,
+	"./ru": 333,
+	"./ru.js": 333,
+	"./sd": 334,
+	"./sd.js": 334,
+	"./se": 335,
+	"./se.js": 335,
+	"./si": 336,
+	"./si.js": 336,
+	"./sk": 337,
+	"./sk.js": 337,
+	"./sl": 338,
+	"./sl.js": 338,
+	"./sq": 339,
+	"./sq.js": 339,
+	"./sr": 340,
+	"./sr-cyrl": 341,
+	"./sr-cyrl.js": 341,
+	"./sr.js": 340,
+	"./ss": 342,
+	"./ss.js": 342,
+	"./sv": 343,
+	"./sv.js": 343,
+	"./sw": 344,
+	"./sw.js": 344,
+	"./ta": 345,
+	"./ta.js": 345,
+	"./te": 346,
+	"./te.js": 346,
+	"./tet": 347,
+	"./tet.js": 347,
+	"./th": 348,
+	"./th.js": 348,
+	"./tl-ph": 349,
+	"./tl-ph.js": 349,
+	"./tlh": 350,
+	"./tlh.js": 350,
+	"./tr": 351,
+	"./tr.js": 351,
+	"./tzl": 352,
+	"./tzl.js": 352,
+	"./tzm": 353,
+	"./tzm-latn": 354,
+	"./tzm-latn.js": 354,
+	"./tzm.js": 353,
+	"./uk": 355,
+	"./uk.js": 355,
+	"./ur": 356,
+	"./ur.js": 356,
+	"./uz": 357,
+	"./uz-latn": 358,
+	"./uz-latn.js": 358,
+	"./uz.js": 357,
+	"./vi": 359,
+	"./vi.js": 359,
+	"./x-pseudo": 360,
+	"./x-pseudo.js": 360,
+	"./yo": 361,
+	"./yo.js": 361,
+	"./zh-cn": 362,
+	"./zh-cn.js": 362,
+	"./zh-hk": 363,
+	"./zh-hk.js": 363,
+	"./zh-tw": 364,
+	"./zh-tw.js": 364
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -767,23 +899,23 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 567;
+webpackContext.id = 568;
 
 /***/ }),
 
-/***/ 610:
+/***/ 611:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(406);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_chart_chart__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -843,7 +975,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/patel445/Desktop/gymBuddy/src/app/app.html"*/'<ion-menu [content]="mycontent">\n\n    <ion-content>\n       <ion-list>\n          <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n            {{p.title}}\n          </button>\n       </ion-list>\n    </ion-content>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/patel445/Desktop/gymBuddy/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/Peter/WebstormProjects/gymBuddy/src/app/app.html"*/'<ion-menu [content]="mycontent">\n\n    <ion-content>\n       <ion-list>\n          <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n            {{p.title}}\n          </button>\n       </ion-list>\n    </ion-content>\n\n</ion-menu>\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/Peter/WebstormProjects/gymBuddy/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -854,5 +986,5 @@ var MyApp = (function () {
 
 /***/ })
 
-},[407]);
+},[408]);
 //# sourceMappingURL=main.js.map

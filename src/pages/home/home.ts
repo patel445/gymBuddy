@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AddWorkoutPage } from "../add-workout/add-workout";
-import { WorkoutDetailPage } from "../workout-detail/workout-detail"
+import { WorkoutDetailPage } from "../workout-detail/workout-detail";
 import { SocialSharing } from '@ionic-native/social-sharing';
 import firebase from 'firebase';
 
@@ -48,11 +48,41 @@ regularShare(){
   }
 
   removeWorkout(workout){
-      if((workout.key != null) && (workout.key != '')) {
-        this.workoutsRef.child(workout.key).remove().then(function() {
-          console.log('Workout removed');
+    let workoutAmount = workout.setsOne * workout.repsOne + workout.setsTwo * workout.repsTwo + workout.setsThree * workout.repsThree;
+
+    if((workout.key != null) && (workout.key != '')) {
+      this.workoutsRef.child(workout.key).remove().then(function() {
+        console.log('Workout removed');
+      });
+    }
+
+    let key;
+    let amount = 0;
+
+    let that = this;
+
+    firebase.database().ref('userProfile/' + firebase.auth().currentUser.uid + '/totals')
+      .orderByChild('date')
+      .equalTo(workout.addedAt)
+      .once('value', snapshot => {
+        snapshot.forEach( totalSnapshot => {
+          amount = totalSnapshot.val().amount;
+          key = totalSnapshot.key;
+
+          return false;
         });
-      }
+      }).then(function(that) {
+        console.log('found workout');
+        let newAmount = amount - workoutAmount;
+
+        firebase.database().ref('userProfile/' + firebase.auth().currentUser.uid + '/totals/' + key)
+          .child('amount')
+          .set(newAmount);
+    });
+
+
+
+
   }
 
   goToWorkoutDetailPage(workout) {
